@@ -1,0 +1,21 @@
+{
+  "name": "camunda-modeler-style-plugin-example",
+  "version": "0.1.0",
+  "description": "Style Plugin Example for the Camunda Modeler",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda/camunda-modeler-plugins.git"
+  },
+  "keywords": [
+    "camunda",
+    "modeler",
+    "plugin"
+  ],
+  "author": "Philipp Fromme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camunda/camunda-modeler-plugins/issues"
+  },
+  "homepage": "https://github.com/camunda/camunda-modeler-plugins#readme"
+}

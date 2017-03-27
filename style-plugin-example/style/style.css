@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(0deg, #52b415, #eee);
+}
+
+.content,
+.log-toggle {
+  background-color: #fff;
+}
+
+.log .log-button {
+  border: solid 1px #fff;
+  color: white;
+}
+
+.log .log-button:hover {
+  color: #444;
+}
+
+.buttons-create button {
+  background-color: #fff;
+  border: solid 1px #ccc;
+  border-radius: 2px;
+}

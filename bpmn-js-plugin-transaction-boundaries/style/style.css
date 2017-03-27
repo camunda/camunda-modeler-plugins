@@ -1,0 +1,19 @@
+.djs-overlay-transaction-boundaries > div {
+  position: relative;
+  top: -5px;
+  left: -4px;
+  width: 14px !important;
+  height: 30px !important;
+  background: #F8f8f8 !important;
+  border: solid 1px #CCC;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.djs-overlay-transaction-boundaries > div:before {
+  content: 'T';
+  position: relative;
+  top: 8px;
+  left: 2px;
+  font-weight: bold;
+}
