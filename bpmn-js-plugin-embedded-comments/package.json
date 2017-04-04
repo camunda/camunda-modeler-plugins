@@ -1,7 +1,7 @@
 {
-  "name": "camunda-modeler-bpmn-js-plugin-example",
+  "name": "camunda-modeler-bpmn-js-embedded-comments",
   "version": "0.1.0",
-  "description": "bpmn-js Plugin Example for the Camunda Modeler",
+  "description": "bpmn-js Embedded Comments Plugin for the Camunda Modeler",
   "main": "index.js",
   "scripts": {
     "client": "browserify client/client.js > client/client-bundle.js"

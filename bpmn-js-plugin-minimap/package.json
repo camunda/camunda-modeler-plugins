@@ -1,7 +1,7 @@
 {
-  "name": "camunda-modeler-bpmn-js-plugin-example",
+  "name": "camunda-modeler-bpmn-js-plugin-minimap",
   "version": "0.1.0",
-  "description": "bpmn-js Plugin Example for the Camunda Modeler",
+  "description": "bpmn-js Minimap Plugin for the Camunda Modeler",
   "main": "index.js",
   "scripts": {
     "client": "browserify client/client.js > client/client-bundle.js"
@@ -24,7 +24,7 @@
   "devDependencies": {
     "browserify": "^14.1.0",
     "camunda-modeler-plugin-helpers": "^1.7.0",
-    "diagram-js-minimap": "^0.1.0",
+    "diagram-js-minimap": "^0.1.1",
     "lodash": "^3.0.1",
     "min-dom": "^0.2.0",
     "tiny-svg": "^0.1.1"

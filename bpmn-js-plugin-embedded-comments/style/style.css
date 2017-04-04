@@ -1,4 +1,4 @@
-@import '../node_modules/bpmn-js-embedded-comments/assets/comments.css';
+@import './comments.css';
 
 body, html {
   font-family: sans-serif;
