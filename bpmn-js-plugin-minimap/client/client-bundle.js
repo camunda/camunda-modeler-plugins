@@ -311,21 +311,50 @@ var MINIMAP_DIMENSIONS = {
 };
 
 var MINIMAP_STYLES = {
-  position: 'absolute',
-  overflow: 'hidden',
-  width: MINIMAP_DIMENSIONS.width,
-  height: MINIMAP_DIMENSIONS.height,
-  background: '#fff',
-  border: 'solid 1px #CCC',
-  borderRadius: '2px',
-  boxShadow: '0 1px 2px rgba(0,0,0,0.3)',
-  boxSizing: 'border-box',
-  userSelect: 'none',
+  'position': 'absolute',
+  'overflow': 'hidden',
+  'background-color': '#fff',
+  'border': 'solid 1px #CCC',
+  'borderRadius': '2px',
+  'boxShadow': '0 1px 2px rgba(0,0,0,0.3)',
+  'boxSizing': 'border-box',
+  'userSelect': 'none',
   '-moz-user-select': 'none'
 };
 
+var MINIMAP_OPEN_MAP_STYLES = {
+  'display': 'block'
+};
+
+var MINIMAP_CLOSED_MAP_STYLES = {
+  'display': 'none'
+};
+
+var MINIMAP_MAP_STYLES = {
+  'width': MINIMAP_DIMENSIONS.width,
+  'height': MINIMAP_DIMENSIONS.height
+};
+
+var MINIMAP_TOGGLE_STYLES = {
+  'background-color': 'rgb(250, 250, 250)'
+};
+
+var MINIMAP_OPEN_TOGGLE_STYLES = {
+  'width': '100%',
+  'height': '10px'
+};
+
+var MINIMAP_CLOSED_TOGGLE_STYLES = {
+  'width': '46px',
+  'height': '46px'
+};
+
+var MINIMAP_TOGGLE_HOVER_STYLES = {
+  'background-color': '#666'
+};
+
 var VIEWPORT_STYLES = {
-  fill: 'rgba(255, 116, 0, 0.25)'
+  'fill': 'rgba(255, 116, 0, 0.25)'
 };
 
 var CROSSHAIR_CURSOR = 'crosshair';
@@ -347,9 +376,11 @@ function Minimap(canvas, elementRegistry, eventBus) {
   this._eventBus = eventBus;
 
   this._init();
+  this.open();
 
   // state is necessary for viewport dragging
   this._state = {
+    isOpen: true,
     isDragging: false,
     initialDragPosition: null,
     offsetViewport: null,
@@ -364,16 +395,31 @@ function Minimap(canvas, elementRegistry, eventBus) {
   }, this);
 
   domEvent.bind(this._viewport, 'mouseleave', function() {
-    setCursor(self._parent, CROSSHAIR_CURSOR);
+    if (!self._state.isDragging) {
+      setCursor(self._parent, CROSSHAIR_CURSOR);
+    }
   }, this);
 
-  domEvent.bind(this._parent, 'mouseenter', function() {
-    setCursor(self._parent, CROSSHAIR_CURSOR);
+  domEvent.bind(this._map, 'mouseenter', function() {
+    if (self._state.isDragging) {
+      setCursor(self._parent, MOVE_CURSOR);
+    } else {
+      setCursor(self._parent, CROSSHAIR_CURSOR);
+    }
   }, this);
 
-  domEvent.bind(this._parent, 'mouseleave', function() {
-    setCursor(self._parent, DEFAULT_CURSOR);
+  domEvent.bind(this._map, 'mouseleave', function() {
+    if (!self._state.isDragging) {
+      setCursor(self._parent, DEFAULT_CURSOR);
+    }
   }, this);
+
+  domEvent.bind(this._parent, 'mouseleave', function(event) {
+    if (self._state.isDragging) {
+      setCursor(self._parent.parentNode, MOVE_CURSOR);
+    }
+  }, this);
+
 
   // set viewbox on click
   domEvent.bind(this._svg, 'click', function(event) {
@@ -477,6 +523,8 @@ function Minimap(canvas, elementRegistry, eventBus) {
         cachedViewbox: null,
         dragger: null
       });
+
+      setCursor(self._parent.parentNode, DEFAULT_CURSOR);
     }
   }, this);
 
@@ -509,6 +557,22 @@ function Minimap(canvas, elementRegistry, eventBus) {
     self._svgClientRect = self._svg.getBoundingClientRect();
   });
 
+  domEvent.bind(this._toggle, 'mouseenter', function() {
+    if (!self._state.isDragging) {
+      assign(self._toggle.style, MINIMAP_TOGGLE_HOVER_STYLES);
+    }
+  });
+
+  domEvent.bind(this._toggle, 'mouseleave', function() {
+    if (!self._state.isDragging) {
+      assign(self._toggle.style, MINIMAP_TOGGLE_STYLES);
+    }
+  });
+
+  domEvent.bind(this._toggle, 'click', function() {
+    self.toggle();
+  });
+
   // add shape on shape/connection added
   eventBus.on([ 'shape.added', 'connection.added' ], function(ctx) {
     var element = ctx.element,
@@ -517,6 +581,15 @@ function Minimap(canvas, elementRegistry, eventBus) {
     var djsVisual = getDjsVisual(gfx);
 
     self.addElement(element, djsVisual);
+
+    self._update();
+  });
+
+  // remove shape on shape/connection removed
+  eventBus.on([ 'shape.removed', 'connection.removed' ], function(ctx) {
+    var element = ctx.element;
+
+    self.removeElement(element);
 
     self._update();
   });
@@ -583,10 +656,19 @@ Minimap.prototype._init = function() {
 
   container.appendChild(parent);
 
+  // create map
+  var map = this._map = document.createElement('div');
+
+  domClasses(map).add('djs-minimap-map');
+
+  assign(map.style, MINIMAP_MAP_STYLES);
+
+  parent.appendChild(map);
+
   // create svg
   var svg = this._svg = svgCreate('svg');
   svgAttr(svg, { width: '100%', height: '100%' });
-  svgAppend(parent, svg);
+  svgAppend(map, svg);
 
   // add groups
   var elementsGroup = this._elementsGroup = svgCreate('g');
@@ -600,6 +682,15 @@ Minimap.prototype._init = function() {
   domClasses(viewport).add('djs-minimap-viewport');
   svgAttr(viewport, VIEWPORT_STYLES);
   svgAppend(viewportGroup, viewport);
+
+  // create toggle
+  var toggle = this._toggle = document.createElement('div');
+
+  domClasses(toggle).add('djs-minimap-toggle');
+
+  assign(toggle.style, MINIMAP_TOGGLE_STYLES);
+
+  parent.appendChild(toggle);
 
   // prevent drag propagation
   domEvent.bind(parent, 'mousedown', function(event) {
@@ -629,6 +720,28 @@ Minimap.prototype._update = function() {
     width: viewbox.width,
     height: viewbox.height
   });
+};
+
+Minimap.prototype.open = function() {
+  assign(this._map.style, MINIMAP_OPEN_MAP_STYLES);
+  assign(this._toggle.style, MINIMAP_OPEN_TOGGLE_STYLES);
+
+  assign(this._state, { isOpen: true });
+};
+
+Minimap.prototype.close = function() {
+  assign(this._map.style, MINIMAP_CLOSED_MAP_STYLES);
+  assign(this._toggle.style, MINIMAP_CLOSED_TOGGLE_STYLES);
+
+  assign(this._state, { isOpen: false });
+};
+
+Minimap.prototype.toggle = function(open) {
+  if (this._state.isOpen) {
+    this.close();
+  } else {
+    this.open();
+  }
 };
 
 Minimap.prototype.addElement = function(element, djsVisual) {
