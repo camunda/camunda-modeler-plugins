@@ -24,7 +24,7 @@
   "devDependencies": {
     "browserify": "^14.1.0",
     "camunda-modeler-plugin-helpers": "^1.7.0",
-    "diagram-js-minimap": "^0.2.0",
+    "diagram-js-minimap": "^0.3.0",
     "lodash": "^3.0.1",
     "min-dom": "^0.2.0",
     "tiny-svg": "^0.1.1"

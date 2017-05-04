@@ -553,10 +553,6 @@ function Minimap(canvas, elementRegistry, eventBus) {
     self._update();
   });
 
-  domEvent.bind(window, 'resize', function() {
-    self._svgClientRect = self._svg.getBoundingClientRect();
-  });
-
   domEvent.bind(this._toggle, 'mouseenter', function() {
     if (!self._state.isDragging) {
       assign(self._toggle.style, MINIMAP_TOGGLE_HOVER_STYLES);
@@ -618,6 +614,14 @@ function Minimap(canvas, elementRegistry, eventBus) {
     if (!self._state.isDragging) {
       self._update();
     }
+  });
+
+  eventBus.on('canvas.resized', function() {
+    if (!self._state.isDragging) {
+      self._update();
+    }
+
+    self._svgClientRect = self._svg.getBoundingClientRect();
   });
 }
 
@@ -727,6 +731,8 @@ Minimap.prototype.open = function() {
   assign(this._toggle.style, MINIMAP_OPEN_TOGGLE_STYLES);
 
   assign(this._state, { isOpen: true });
+
+  domClasses(this._map).remove('closed');
 };
 
 Minimap.prototype.close = function() {
@@ -734,6 +740,8 @@ Minimap.prototype.close = function() {
   assign(this._toggle.style, MINIMAP_CLOSED_TOGGLE_STYLES);
 
   assign(this._state, { isOpen: false });
+
+  domClasses(this._map).add('closed');
 };
 
 Minimap.prototype.toggle = function(open) {
