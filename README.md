@@ -1,8 +1,9 @@
+> Looking for a starting point to create you own plugin? Checkout our [plugin starter project](https://github.com/camunda/camunda-modeler-plugin-example) or consult the [plugins documentation](https://github.com/camunda/camunda-modeler/tree/master/docs/plugins).
+
+
 # Camunda Modeler Plugins :electric_plug:
 
 This repository contains a number of plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler).
-
-If you're looking for a starting point for creating you own plugins have a look at [this](https://github.com/camunda/camunda-modeler-plugin-example) example project.
 
 ## Style Plugins
 
