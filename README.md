@@ -19,6 +19,10 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 
 * [Menu Plugin Example](./menu-plugin-example) - an example showcasing how to create a menu plugin.
 
+#### Other
+
+* [Darlene](https://github.com/philippfromme/darlene) - a personal assistant helping you navigate the waters of BPMN. Built with the Web Audio API.
+
 
 ## Additional Resources
 
