@@ -37,4 +37,4 @@ npm run client
 
 Put the directory into the `plugins` directory of the modeler.
 
-For further information on how to create plugins for the Camunda Modeler see the [documentation](https://github.com/camunda/camunda-modeler/tree/547-plugins/docs/plugins).
+For further information on how to create plugins for the Camunda Modeler see the [documentation](https://github.com/camunda/camunda-modeler/tree/master/docs/plugins).
