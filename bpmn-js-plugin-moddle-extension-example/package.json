@@ -1,0 +1,33 @@
+{
+  "name": "bpmn-js-moddle-extension-plugin-example",
+  "version": "0.1.0",
+  "description": "bpmn-js Moddle Extension Plugin Example for the Camunda Modeler",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "webpack",
+    "bundle:watch": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda/camunda-modeler-plugins.git"
+  },
+  "keywords": [
+    "camunda",
+    "modeler",
+    "plugin"
+  ],
+  "author": "Philipp Fromme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camunda/camunda-modeler-plugins/issues"
+  },
+  "homepage": "https://github.com/camunda/camunda-modeler-plugins#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "camunda-modeler-plugin-helpers": "^2.1.0",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
