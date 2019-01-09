@@ -1,6 +1,6 @@
-# BPMN Transaction Boundaries Plugin
+# Camunda Transaction Boundaries Plugin
 
-[Transaction Boundaries](https://github.com/bpmn-io/bpmn-js-transaction-boundaries/) as a plugin for the Camunda Modeler.
+[Transaction Boundaries](https://github.com/bpmn-io/camunda-transaction-boundaries/) as a plugin for the Camunda Modeler that visualizes the (database) transaction boundaries Camunda applies.
 
 Put this directory into the `plugins` directory of the Camunda Modeler and you're ready to go.
 
