@@ -96,7 +96,6 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers */ "./node_modules/camunda-modeler-plugin-helpers/index.js");
-/* harmony import */ var camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module */ "./client/module.js");
 
 
@@ -150,9 +149,16 @@ TransactionBoundariesEditorActions.$inject = [
 /*!**************************************************************!*\
   !*** ./node_modules/camunda-modeler-plugin-helpers/index.js ***!
   \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: registerClientPlugin, registerBpmnJSPlugin, registerBpmnJSModdleExtension, getModelerDirectory, getPluginsDirectory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerClientPlugin", function() { return registerClientPlugin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerBpmnJSPlugin", function() { return registerBpmnJSPlugin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerBpmnJSModdleExtension", function() { return registerBpmnJSModdleExtension; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getModelerDirectory", function() { return getModelerDirectory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPluginsDirectory", function() { return getPluginsDirectory; });
 /**
  * Validate and register a client plugin.
  *
@@ -180,39 +186,66 @@ function registerClientPlugin(plugin, type) {
 /**
  * Validate and register a bpmn-js plugin.
  *
- * Example use:
+ * @param {Object} module
  *
- *    var registerBpmnJSPlugin = require('./camundaModelerPluginHelpers').registerBpmnJSPlugin;
- *    var module = require('./index');
+ * @example
  *
- *    registerBpmnJSPlugin(module);
+ * import {
+ *   registerBpmnJSPlugin
+ * } from 'camunda-modeler-plugin-helpers';
  *
- * @param {Object} plugin
+ * const BpmnJSModule = {
+ *   __init__: [ 'myService' ],
+ *   myService: [ 'type', ... ]
+ * };
+ *
+ * registerBpmnJSPlugin(BpmnJSModule);
  */
-function registerBpmnJSPlugin(plugin) {
-  registerClientPlugin(plugin, 'bpmn.modeler.additionalModules');
+function registerBpmnJSPlugin(module) {
+  registerClientPlugin(module, 'bpmn.modeler.additionalModules');
 }
-
-module.exports.registerBpmnJSPlugin = registerBpmnJSPlugin;
 
 /**
  * Validate and register a bpmn-moddle extension plugin.
  *
- * Example use:
+ * @param {Object} descriptor
  *
- *    var registerBpmnJSModdleExtension = require('./camundaModelerPluginHelpers').registerBpmnJSModdleExtension;
- *    var module = require('./index');
+ * @example
+ * import {
+ *   registerBpmnJSModdleExtension
+ * } from 'camunda-modeler-plugin-helpers';
  *
- *    registerBpmnJSModdleExtension(module);
+ * var moddleDescriptor = {
+ *   name: 'my descriptor',
+ *   uri: 'http://example.my.company.localhost/schema/my-descriptor/1.0',
+ *   prefix: 'mydesc',
  *
- * @param {Object} plugin
+ *   ...
+ * };
+ *
+ * registerBpmnJSModdleExtension(moddleDescriptor);
  */
-function registerBpmnJSModdleExtension(plugin) {
-  registerClientPlugin(plugin, 'bpmn.modeler.moddleExtension');
+function registerBpmnJSModdleExtension(descriptor) {
+  registerClientPlugin(descriptor, 'bpmn.modeler.moddleExtension');
 }
 
-module.exports.registerBpmnJSModdleExtension = registerBpmnJSModdleExtension;
+/**
+ * Return the modeler directory, as a string.
+ *
+ * @return {String}
+ */
+function getModelerDirectory() {
+  return window.getModelerDirectory();
+}
 
+/**
+ * Return the modeler plugin directory, as a string.
+ *
+ * @return {String}
+ */
+function getPluginsDirectory() {
+  return window.getPluginsDirectory();
+}
 
 /***/ }),
 
