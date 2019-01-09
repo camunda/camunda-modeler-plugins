@@ -1,42 +1,248 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var registerBpmnJSPlugin = require('camunda-modeler-plugin-helpers').registerBpmnJSPlugin;
-var plugin = require('./transaction-boundaries-with-editor-actions');
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./client/client.js");
+/******/ })
+/************************************************************************/
+/******/ ({
 
-registerBpmnJSPlugin(plugin);
+/***/ "./client/client.js":
+/*!**************************!*\
+  !*** ./client/client.js ***!
+  \**************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-},{"./transaction-boundaries-with-editor-actions":2,"camunda-modeler-plugin-helpers":5}],2:[function(require,module,exports){
-var inherits = require('inherits');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers */ "./node_modules/camunda-modeler-plugin-helpers/index.js");
+/* harmony import */ var camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module */ "./client/module.js");
 
-var TransactionBoundaries = require('../node_modules/bpmn-js-transaction-boundaries/lib/TransactionBoundaries');
 
-function TransactionBoundariesWithEditorActions(elementRegistry, overlays, eventBus, editorActions) {
-  TransactionBoundaries.call(this, elementRegistry, overlays, eventBus);
 
-  var that = this;
 
-  editorActions.register({
-    toggleTransactionBoundaries: function() {
-      that.toggle();
-    }
+Object(camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__["registerBpmnJSPlugin"])(_module__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+/***/ }),
+
+/***/ "./client/module.js":
+/*!**************************!*\
+  !*** ./client/module.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var camunda_transaction_boundaries__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-transaction-boundaries */ "./node_modules/camunda-transaction-boundaries/index.js");
+/* harmony import */ var camunda_transaction_boundaries__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(camunda_transaction_boundaries__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function TransactionBoundariesEditorActions(injector, eventBus, transactionBoundaries) {
+
+  eventBus.on('editorActions.init', function(event) {
+    var editorActions = event.editorActions;
+
+    editorActions.register('toggleTransactionBoundaries', function() {
+      transactionBoundaries.toggle();
+    });
   });
 }
 
-inherits(TransactionBoundariesWithEditorActions, TransactionBoundaries);
+TransactionBoundariesEditorActions.$inject = [
+  'injector',
+  'eventBus',
+  'transactionBoundaries'
+];
 
-TransactionBoundariesWithEditorActions.$inject = [ 'elementRegistry', 'overlays', 'eventBus', 'editorActions' ];
+/* harmony default export */ __webpack_exports__["default"] = ({
+  __depends__: [
+    camunda_transaction_boundaries__WEBPACK_IMPORTED_MODULE_0___default.a
+  ],
+  __init__: [ TransactionBoundariesEditorActions ]
+});
 
-module.exports = {
-  __init__: [ 'transactionBoundariesWithEditorActions' ],
-  'transactionBoundariesWithEditorActions': [ 'type', TransactionBoundariesWithEditorActions ]
-};
+/***/ }),
 
-},{"../node_modules/bpmn-js-transaction-boundaries/lib/TransactionBoundaries":3,"inherits":6}],3:[function(require,module,exports){
-'use strict';
+/***/ "./node_modules/camunda-modeler-plugin-helpers/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/camunda-modeler-plugin-helpers/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-var forEach = require('lodash/collection/forEach'),
-    assign = require('lodash/object/assign');
+/**
+ * Validate and register a client plugin.
+ *
+ * @param {Object} plugin
+ * @param {String} type
+ */
+function registerClientPlugin(plugin, type) {
+  var plugins = window.plugins || [];
+  window.plugins = plugins;
 
-var getOrientation = require('./Util').getOrientation;
+  if (!plugin) {
+    throw new Error('plugin not specified');
+  }
+
+  if (!type) {
+    throw new Error('type not specified');
+  }
+
+  plugins.push({
+    plugin: plugin,
+    type: type
+  });
+}
+
+/**
+ * Validate and register a bpmn-js plugin.
+ *
+ * Example use:
+ *
+ *    var registerBpmnJSPlugin = require('./camundaModelerPluginHelpers').registerBpmnJSPlugin;
+ *    var module = require('./index');
+ *
+ *    registerBpmnJSPlugin(module);
+ *
+ * @param {Object} plugin
+ */
+function registerBpmnJSPlugin(plugin) {
+  registerClientPlugin(plugin, 'bpmn.modeler.additionalModules');
+}
+
+module.exports.registerBpmnJSPlugin = registerBpmnJSPlugin;
+
+/**
+ * Validate and register a bpmn-moddle extension plugin.
+ *
+ * Example use:
+ *
+ *    var registerBpmnJSModdleExtension = require('./camundaModelerPluginHelpers').registerBpmnJSModdleExtension;
+ *    var module = require('./index');
+ *
+ *    registerBpmnJSModdleExtension(module);
+ *
+ * @param {Object} plugin
+ */
+function registerBpmnJSModdleExtension(plugin) {
+  registerClientPlugin(plugin, 'bpmn.modeler.moddleExtension');
+}
+
+module.exports.registerBpmnJSModdleExtension = registerBpmnJSModdleExtension;
+
+
+/***/ }),
+
+/***/ "./node_modules/camunda-transaction-boundaries/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/camunda-transaction-boundaries/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./lib */ "./node_modules/camunda-transaction-boundaries/lib/index.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/camunda-transaction-boundaries/lib/TransactionBoundaries.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/camunda-transaction-boundaries/lib/TransactionBoundaries.js ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TransactionBoundaries; });
+/* harmony import */ var min_dash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! min-dash */ "./node_modules/min-dash/dist/index.esm.js");
+/* harmony import */ var _Util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Util */ "./node_modules/camunda-transaction-boundaries/lib/Util.js");
+
+
+
 
 /**
  * A module for showing the transaction boundaries in a BPMN diagram
@@ -61,8 +267,6 @@ function TransactionBoundaries(elementRegistry, overlays, eventBus) {
 
 TransactionBoundaries.$inject = [ 'elementRegistry', 'overlays', 'eventBus' ];
 
-module.exports = TransactionBoundaries;
-
 
 /**
  * Get the transaction boundaries for the given element
@@ -73,6 +277,7 @@ module.exports = TransactionBoundaries;
  * - Intermediate Catching Message Event
  * - Intermediate Catching Timer Event
  * - Intermediate Catching Signal Event
+ * - Intermediate Catching Conditional Event
  * - Receive Task
  * - User Task
  * - Event Based Gateway
@@ -106,7 +311,8 @@ TransactionBoundaries.prototype._getTransactionBoundaries = function(element) {
   var isWaitStateEvent = element.type === 'bpmn:IntermediateCatchEvent' && (
     eventDefinitionType === 'bpmn:MessageEventDefinition' ||
     eventDefinitionType === 'bpmn:TimerEventDefinition' ||
-    eventDefinitionType === 'bpmn:SignalEventDefinition'
+    eventDefinitionType === 'bpmn:SignalEventDefinition' ||
+    eventDefinitionType === 'bpmn:ConditionalEventDefinition'
   );
 
   var isAsyncAfter = businessObject.asyncAfter || (loopCharacteristics && loopCharacteristics.asyncAfter);
@@ -142,7 +348,7 @@ TransactionBoundaries.prototype._getTransactionBoundaryElements = function() {
     var transactionBoundaries = self._getTransactionBoundaries(element);
 
     if (transactionBoundaries) {
-      transactionBoundaryElements.push(assign({ shape: element }, { boundaries: transactionBoundaries }));
+      transactionBoundaryElements.push(Object(min_dash__WEBPACK_IMPORTED_MODULE_0__["assign"])({ shape: element }, { boundaries: transactionBoundaries }));
     }
 
   });
@@ -160,13 +366,13 @@ TransactionBoundaries.prototype._getTransactionBoundaryElements = function() {
  */
 TransactionBoundaries.prototype._addOverlay = function(shape, waypoint) {
 
-  var orientation = getOrientation(waypoint, shape, -7);
+  var orientation = Object(_Util__WEBPACK_IMPORTED_MODULE_1__["getOrientation"])(waypoint, shape, -7);
 
   if (orientation === 'intersect') {
     // Try again using a bigger padding to get an orientation which is not 'intersect'.
     // Otherwise the boundary would not be visible if the connection is attached on the
     // diagonal edge of a gateway. Not perfect, but much better than showing no overlay at all.
-    orientation = getOrientation(waypoint, shape, -20);
+    orientation = Object(_Util__WEBPACK_IMPORTED_MODULE_1__["getOrientation"])(waypoint, shape, -20);
   }
 
   var strokeWidth = 3,
@@ -236,28 +442,56 @@ TransactionBoundaries.prototype.show = function() {
 
   var self = this;
 
-  forEach(transactionBoundaryElements, function(element) {
+  Object(min_dash__WEBPACK_IMPORTED_MODULE_0__["forEach"])(transactionBoundaryElements, function(element) {
 
     if (element.boundaries.before) {
 
-      forEach(element.shape.incoming, function(connection) {
+      if (element.shape.incoming.length > 0) {
 
-        // last waypoint of the incoming connection
-        var waypoint = connection.waypoints.slice(-1).pop();
+        Object(min_dash__WEBPACK_IMPORTED_MODULE_0__["forEach"])(element.shape.incoming, function(connection) {
 
-        self._addOverlay(element.shape, waypoint);
-      });
+          if (connection.type !== 'bpmn:SequenceFlow') {
+            return;
+          }
+
+          // last waypoint of the incoming connection
+          var waypoint = connection.waypoints[connection.waypoints.length - 1];
+
+          self._addOverlay(element.shape, waypoint);
+        });
+      } else {
+
+        // no incoming connection, calculate position in the front
+        self._addOverlay(element.shape, {
+          x: element.shape.x,
+          y: element.shape.y + element.shape.height / 2
+        });
+      }
     }
 
     if (element.boundaries.after) {
 
-      forEach(element.shape.outgoing, function(connection) {
+      if (element.shape.outgoing.length > 0) {
 
-        // first waypoint of the outgoing connection
-        var waypoint = connection.waypoints[0];
+        Object(min_dash__WEBPACK_IMPORTED_MODULE_0__["forEach"])(element.shape.outgoing, function(connection) {
 
-        self._addOverlay(element.shape, waypoint);
-      });
+          if (connection.type !== 'bpmn:SequenceFlow') {
+            return;
+          }
+
+          // first waypoint of the outgoing connection
+          var waypoint = connection.waypoints[0];
+
+          self._addOverlay(element.shape, waypoint);
+        });
+      } else {
+
+        // no outgoing connection, calculate position after element
+        self._addOverlay(element.shape, {
+          x: element.shape.x + element.shape.width,
+          y: element.shape.y + element.shape.height / 2
+        });
+      }
     }
 
   });
@@ -283,10 +517,22 @@ TransactionBoundaries.prototype.toggle = function() {
   this.active ? this.hide() : this.show();
 };
 
-},{"./Util":4,"lodash/collection/forEach":7,"lodash/object/assign":36}],4:[function(require,module,exports){
-'use strict';
 
-var isObject = require('lodash/lang/isObject');
+/***/ }),
+
+/***/ "./node_modules/camunda-transaction-boundaries/lib/Util.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/camunda-transaction-boundaries/lib/Util.js ***!
+  \*****************************************************************/
+/*! exports provided: asTRBL, getOrientation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "asTRBL", function() { return asTRBL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getOrientation", function() { return getOrientation; });
+/* harmony import */ var min_dash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! min-dash */ "./node_modules/min-dash/dist/index.esm.js");
+
 
 /**
  * Convert the given bounds to a { top, left, bottom, right } descriptor.
@@ -304,10 +550,8 @@ function asTRBL(bounds) {
   };
 }
 
-module.exports.asTRBL = asTRBL;
 
-
-////// orientation utils //////////////////////////////
+// orientation utils //////////////////////////////
 
 /**
  * Get orientation of the given rectangle with respect to
@@ -328,7 +572,7 @@ function getOrientation(rect, reference, padding) {
 
   // make sure we can use an object, too
   // for individual { x, y } padding
-  if (!isObject(padding)) {
+  if (!Object(min_dash__WEBPACK_IMPORTED_MODULE_0__["isObject"])(padding)) {
     padding = { x: padding, y: padding };
   }
 
@@ -351,1096 +595,695 @@ function getOrientation(rect, reference, padding) {
   }
 }
 
-module.exports.getOrientation = getOrientation;
-},{"lodash/lang/isObject":35}],5:[function(require,module,exports){
-/**
- * Validate and register a client plugin.
- *
- * @param {Object} plugin
- * @param {String} type
- */
-function registerClientPlugin(plugin, type) {
-  var plugins = window.plugins || [];
-  window.plugins = plugins;
-
-  if (!plugin) {
-    throw new Error('plugin not specified');
-  }
-
-  if (!type) {
-    throw new Error('type not specified');
-  }
-
-  plugins.push({
-    plugin: plugin,
-    type: type
-  });
-}
-
-/**
- * Validate and register a bpmn-js plugin.
- *
- * Example use:
- *
- *    var registerBpmnJSPlugin = require('./camundaModelerPluginHelpers').registerBpmnJSPlugin;
- *    var module = require('./index');
- *
- *    registerBpmnJSPlugin(module);
- *
- * @param {Object} plugin
- */
-function registerBpmnJSPlugin(plugin) {
-  registerClientPlugin(plugin, 'bpmn.modeler.additionalModules');
-}
-
-module.exports.registerBpmnJSPlugin = registerBpmnJSPlugin;
-
-},{}],6:[function(require,module,exports){
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
-}
-
-},{}],7:[function(require,module,exports){
-var arrayEach = require('../internal/arrayEach'),
-    baseEach = require('../internal/baseEach'),
-    createForEach = require('../internal/createForEach');
-
-/**
- * Iterates over elements of `collection` invoking `iteratee` for each element.
- * The `iteratee` is bound to `thisArg` and invoked with three arguments:
- * (value, index|key, collection). Iteratee functions may exit iteration early
- * by explicitly returning `false`.
- *
- * **Note:** As with other "Collections" methods, objects with a "length" property
- * are iterated like arrays. To avoid this behavior `_.forIn` or `_.forOwn`
- * may be used for object iteration.
- *
- * @static
- * @memberOf _
- * @alias each
- * @category Collection
- * @param {Array|Object|string} collection The collection to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
- * @param {*} [thisArg] The `this` binding of `iteratee`.
- * @returns {Array|Object|string} Returns `collection`.
- * @example
- *
- * _([1, 2]).forEach(function(n) {
- *   console.log(n);
- * }).value();
- * // => logs each value from left to right and returns the array
- *
- * _.forEach({ 'a': 1, 'b': 2 }, function(n, key) {
- *   console.log(n, key);
- * });
- * // => logs each value-key pair and returns the object (iteration order is not guaranteed)
- */
-var forEach = createForEach(arrayEach, baseEach);
-
-module.exports = forEach;
-
-},{"../internal/arrayEach":9,"../internal/baseEach":13,"../internal/createForEach":21}],8:[function(require,module,exports){
-/** Used as the `TypeError` message for "Functions" methods. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
-/* Native method references for those with the same name as other `lodash` methods. */
-var nativeMax = Math.max;
-
-/**
- * Creates a function that invokes `func` with the `this` binding of the
- * created function and arguments from `start` and beyond provided as an array.
- *
- * **Note:** This method is based on the [rest parameter](https://developer.mozilla.org/Web/JavaScript/Reference/Functions/rest_parameters).
- *
- * @static
- * @memberOf _
- * @category Function
- * @param {Function} func The function to apply a rest parameter to.
- * @param {number} [start=func.length-1] The start position of the rest parameter.
- * @returns {Function} Returns the new function.
- * @example
- *
- * var say = _.restParam(function(what, names) {
- *   return what + ' ' + _.initial(names).join(', ') +
- *     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
- * });
- *
- * say('hello', 'fred', 'barney', 'pebbles');
- * // => 'hello fred, barney, & pebbles'
- */
-function restParam(func, start) {
-  if (typeof func != 'function') {
-    throw new TypeError(FUNC_ERROR_TEXT);
-  }
-  start = nativeMax(start === undefined ? (func.length - 1) : (+start || 0), 0);
-  return function() {
-    var args = arguments,
-        index = -1,
-        length = nativeMax(args.length - start, 0),
-        rest = Array(length);
-
-    while (++index < length) {
-      rest[index] = args[start + index];
-    }
-    switch (start) {
-      case 0: return func.call(this, rest);
-      case 1: return func.call(this, args[0], rest);
-      case 2: return func.call(this, args[0], args[1], rest);
-    }
-    var otherArgs = Array(start + 1);
-    index = -1;
-    while (++index < start) {
-      otherArgs[index] = args[index];
-    }
-    otherArgs[start] = rest;
-    return func.apply(this, otherArgs);
-  };
-}
-
-module.exports = restParam;
-
-},{}],9:[function(require,module,exports){
-/**
- * A specialized version of `_.forEach` for arrays without support for callback
- * shorthands and `this` binding.
- *
- * @private
- * @param {Array} array The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns `array`.
- */
-function arrayEach(array, iteratee) {
-  var index = -1,
-      length = array.length;
-
-  while (++index < length) {
-    if (iteratee(array[index], index, array) === false) {
-      break;
-    }
-  }
-  return array;
-}
-
-module.exports = arrayEach;
-
-},{}],10:[function(require,module,exports){
-var keys = require('../object/keys');
-
-/**
- * A specialized version of `_.assign` for customizing assigned values without
- * support for argument juggling, multiple sources, and `this` binding `customizer`
- * functions.
- *
- * @private
- * @param {Object} object The destination object.
- * @param {Object} source The source object.
- * @param {Function} customizer The function to customize assigned values.
- * @returns {Object} Returns `object`.
- */
-function assignWith(object, source, customizer) {
-  var index = -1,
-      props = keys(source),
-      length = props.length;
-
-  while (++index < length) {
-    var key = props[index],
-        value = object[key],
-        result = customizer(value, source[key], key, object, source);
-
-    if ((result === result ? (result !== value) : (value === value)) ||
-        (value === undefined && !(key in object))) {
-      object[key] = result;
-    }
-  }
-  return object;
-}
-
-module.exports = assignWith;
-
-},{"../object/keys":37}],11:[function(require,module,exports){
-var baseCopy = require('./baseCopy'),
-    keys = require('../object/keys');
-
-/**
- * The base implementation of `_.assign` without support for argument juggling,
- * multiple sources, and `customizer` functions.
- *
- * @private
- * @param {Object} object The destination object.
- * @param {Object} source The source object.
- * @returns {Object} Returns `object`.
- */
-function baseAssign(object, source) {
-  return source == null
-    ? object
-    : baseCopy(source, keys(source), object);
-}
-
-module.exports = baseAssign;
-
-},{"../object/keys":37,"./baseCopy":12}],12:[function(require,module,exports){
-/**
- * Copies properties of `source` to `object`.
- *
- * @private
- * @param {Object} source The object to copy properties from.
- * @param {Array} props The property names to copy.
- * @param {Object} [object={}] The object to copy properties to.
- * @returns {Object} Returns `object`.
- */
-function baseCopy(source, props, object) {
-  object || (object = {});
-
-  var index = -1,
-      length = props.length;
-
-  while (++index < length) {
-    var key = props[index];
-    object[key] = source[key];
-  }
-  return object;
-}
-
-module.exports = baseCopy;
-
-},{}],13:[function(require,module,exports){
-var baseForOwn = require('./baseForOwn'),
-    createBaseEach = require('./createBaseEach');
-
-/**
- * The base implementation of `_.forEach` without support for callback
- * shorthands and `this` binding.
- *
- * @private
- * @param {Array|Object|string} collection The collection to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array|Object|string} Returns `collection`.
- */
-var baseEach = createBaseEach(baseForOwn);
-
-module.exports = baseEach;
-
-},{"./baseForOwn":15,"./createBaseEach":19}],14:[function(require,module,exports){
-var createBaseFor = require('./createBaseFor');
-
-/**
- * The base implementation of `baseForIn` and `baseForOwn` which iterates
- * over `object` properties returned by `keysFunc` invoking `iteratee` for
- * each property. Iteratee functions may exit iteration early by explicitly
- * returning `false`.
- *
- * @private
- * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @param {Function} keysFunc The function to get the keys of `object`.
- * @returns {Object} Returns `object`.
- */
-var baseFor = createBaseFor();
-
-module.exports = baseFor;
-
-},{"./createBaseFor":20}],15:[function(require,module,exports){
-var baseFor = require('./baseFor'),
-    keys = require('../object/keys');
-
-/**
- * The base implementation of `_.forOwn` without support for callback
- * shorthands and `this` binding.
- *
- * @private
- * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Object} Returns `object`.
- */
-function baseForOwn(object, iteratee) {
-  return baseFor(object, iteratee, keys);
-}
-
-module.exports = baseForOwn;
-
-},{"../object/keys":37,"./baseFor":14}],16:[function(require,module,exports){
-/**
- * The base implementation of `_.property` without support for deep paths.
- *
- * @private
- * @param {string} key The key of the property to get.
- * @returns {Function} Returns the new function.
- */
-function baseProperty(key) {
-  return function(object) {
-    return object == null ? undefined : object[key];
-  };
-}
-
-module.exports = baseProperty;
-
-},{}],17:[function(require,module,exports){
-var identity = require('../utility/identity');
-
-/**
- * A specialized version of `baseCallback` which only supports `this` binding
- * and specifying the number of arguments to provide to `func`.
- *
- * @private
- * @param {Function} func The function to bind.
- * @param {*} thisArg The `this` binding of `func`.
- * @param {number} [argCount] The number of arguments to provide to `func`.
- * @returns {Function} Returns the callback.
- */
-function bindCallback(func, thisArg, argCount) {
-  if (typeof func != 'function') {
-    return identity;
-  }
-  if (thisArg === undefined) {
-    return func;
-  }
-  switch (argCount) {
-    case 1: return function(value) {
-      return func.call(thisArg, value);
-    };
-    case 3: return function(value, index, collection) {
-      return func.call(thisArg, value, index, collection);
-    };
-    case 4: return function(accumulator, value, index, collection) {
-      return func.call(thisArg, accumulator, value, index, collection);
-    };
-    case 5: return function(value, other, key, object, source) {
-      return func.call(thisArg, value, other, key, object, source);
-    };
-  }
-  return function() {
-    return func.apply(thisArg, arguments);
-  };
-}
-
-module.exports = bindCallback;
-
-},{"../utility/identity":39}],18:[function(require,module,exports){
-var bindCallback = require('./bindCallback'),
-    isIterateeCall = require('./isIterateeCall'),
-    restParam = require('../function/restParam');
-
-/**
- * Creates a `_.assign`, `_.defaults`, or `_.merge` function.
- *
- * @private
- * @param {Function} assigner The function to assign values.
- * @returns {Function} Returns the new assigner function.
- */
-function createAssigner(assigner) {
-  return restParam(function(object, sources) {
-    var index = -1,
-        length = object == null ? 0 : sources.length,
-        customizer = length > 2 ? sources[length - 2] : undefined,
-        guard = length > 2 ? sources[2] : undefined,
-        thisArg = length > 1 ? sources[length - 1] : undefined;
-
-    if (typeof customizer == 'function') {
-      customizer = bindCallback(customizer, thisArg, 5);
-      length -= 2;
-    } else {
-      customizer = typeof thisArg == 'function' ? thisArg : undefined;
-      length -= (customizer ? 1 : 0);
-    }
-    if (guard && isIterateeCall(sources[0], sources[1], guard)) {
-      customizer = length < 3 ? undefined : customizer;
-      length = 1;
-    }
-    while (++index < length) {
-      var source = sources[index];
-      if (source) {
-        assigner(object, source, customizer);
-      }
-    }
-    return object;
-  });
-}
-
-module.exports = createAssigner;
-
-},{"../function/restParam":8,"./bindCallback":17,"./isIterateeCall":26}],19:[function(require,module,exports){
-var getLength = require('./getLength'),
-    isLength = require('./isLength'),
-    toObject = require('./toObject');
-
-/**
- * Creates a `baseEach` or `baseEachRight` function.
- *
- * @private
- * @param {Function} eachFunc The function to iterate over a collection.
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {Function} Returns the new base function.
- */
-function createBaseEach(eachFunc, fromRight) {
-  return function(collection, iteratee) {
-    var length = collection ? getLength(collection) : 0;
-    if (!isLength(length)) {
-      return eachFunc(collection, iteratee);
-    }
-    var index = fromRight ? length : -1,
-        iterable = toObject(collection);
-
-    while ((fromRight ? index-- : ++index < length)) {
-      if (iteratee(iterable[index], index, iterable) === false) {
-        break;
-      }
-    }
-    return collection;
-  };
-}
-
-module.exports = createBaseEach;
-
-},{"./getLength":22,"./isLength":27,"./toObject":30}],20:[function(require,module,exports){
-var toObject = require('./toObject');
-
-/**
- * Creates a base function for `_.forIn` or `_.forInRight`.
- *
- * @private
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {Function} Returns the new base function.
- */
-function createBaseFor(fromRight) {
-  return function(object, iteratee, keysFunc) {
-    var iterable = toObject(object),
-        props = keysFunc(object),
-        length = props.length,
-        index = fromRight ? length : -1;
-
-    while ((fromRight ? index-- : ++index < length)) {
-      var key = props[index];
-      if (iteratee(iterable[key], key, iterable) === false) {
-        break;
-      }
-    }
-    return object;
-  };
-}
-
-module.exports = createBaseFor;
-
-},{"./toObject":30}],21:[function(require,module,exports){
-var bindCallback = require('./bindCallback'),
-    isArray = require('../lang/isArray');
-
-/**
- * Creates a function for `_.forEach` or `_.forEachRight`.
- *
- * @private
- * @param {Function} arrayFunc The function to iterate over an array.
- * @param {Function} eachFunc The function to iterate over a collection.
- * @returns {Function} Returns the new each function.
- */
-function createForEach(arrayFunc, eachFunc) {
-  return function(collection, iteratee, thisArg) {
-    return (typeof iteratee == 'function' && thisArg === undefined && isArray(collection))
-      ? arrayFunc(collection, iteratee)
-      : eachFunc(collection, bindCallback(iteratee, thisArg, 3));
-  };
-}
-
-module.exports = createForEach;
-
-},{"../lang/isArray":32,"./bindCallback":17}],22:[function(require,module,exports){
-var baseProperty = require('./baseProperty');
-
-/**
- * Gets the "length" property value of `object`.
- *
- * **Note:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
- * that affects Safari on at least iOS 8.1-8.3 ARM64.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {*} Returns the "length" value.
- */
-var getLength = baseProperty('length');
-
-module.exports = getLength;
-
-},{"./baseProperty":16}],23:[function(require,module,exports){
-var isNative = require('../lang/isNative');
-
-/**
- * Gets the native function at `key` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the method to get.
- * @returns {*} Returns the function if it's native, else `undefined`.
- */
-function getNative(object, key) {
-  var value = object == null ? undefined : object[key];
-  return isNative(value) ? value : undefined;
-}
-
-module.exports = getNative;
-
-},{"../lang/isNative":34}],24:[function(require,module,exports){
-var getLength = require('./getLength'),
-    isLength = require('./isLength');
-
-/**
- * Checks if `value` is array-like.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- */
-function isArrayLike(value) {
-  return value != null && isLength(getLength(value));
-}
-
-module.exports = isArrayLike;
-
-},{"./getLength":22,"./isLength":27}],25:[function(require,module,exports){
-/** Used to detect unsigned integer values. */
-var reIsUint = /^\d+$/;
-
-/**
- * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
- * of an array-like value.
- */
-var MAX_SAFE_INTEGER = 9007199254740991;
-
-/**
- * Checks if `value` is a valid array-like index.
- *
- * @private
- * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
- */
-function isIndex(value, length) {
-  value = (typeof value == 'number' || reIsUint.test(value)) ? +value : -1;
-  length = length == null ? MAX_SAFE_INTEGER : length;
-  return value > -1 && value % 1 == 0 && value < length;
-}
-
-module.exports = isIndex;
-
-},{}],26:[function(require,module,exports){
-var isArrayLike = require('./isArrayLike'),
-    isIndex = require('./isIndex'),
-    isObject = require('../lang/isObject');
-
-/**
- * Checks if the provided arguments are from an iteratee call.
- *
- * @private
- * @param {*} value The potential iteratee value argument.
- * @param {*} index The potential iteratee index or key argument.
- * @param {*} object The potential iteratee object argument.
- * @returns {boolean} Returns `true` if the arguments are from an iteratee call, else `false`.
- */
-function isIterateeCall(value, index, object) {
-  if (!isObject(object)) {
-    return false;
-  }
-  var type = typeof index;
-  if (type == 'number'
-      ? (isArrayLike(object) && isIndex(index, object.length))
-      : (type == 'string' && index in object)) {
-    var other = object[index];
-    return value === value ? (value === other) : (other !== other);
-  }
-  return false;
-}
-
-module.exports = isIterateeCall;
-
-},{"../lang/isObject":35,"./isArrayLike":24,"./isIndex":25}],27:[function(require,module,exports){
-/**
- * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
- * of an array-like value.
- */
-var MAX_SAFE_INTEGER = 9007199254740991;
-
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This function is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- */
-function isLength(value) {
-  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
-
-module.exports = isLength;
-
-},{}],28:[function(require,module,exports){
-/**
- * Checks if `value` is object-like.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-module.exports = isObjectLike;
-
-},{}],29:[function(require,module,exports){
-var isArguments = require('../lang/isArguments'),
-    isArray = require('../lang/isArray'),
-    isIndex = require('./isIndex'),
-    isLength = require('./isLength'),
-    keysIn = require('../object/keysIn');
-
-/** Used for native method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * A fallback implementation of `Object.keys` which creates an array of the
- * own enumerable property names of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function shimKeys(object) {
-  var props = keysIn(object),
-      propsLength = props.length,
-      length = propsLength && object.length;
-
-  var allowIndexes = !!length && isLength(length) &&
-    (isArray(object) || isArguments(object));
-
-  var index = -1,
-      result = [];
-
-  while (++index < propsLength) {
-    var key = props[index];
-    if ((allowIndexes && isIndex(key, length)) || hasOwnProperty.call(object, key)) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-module.exports = shimKeys;
-
-},{"../lang/isArguments":31,"../lang/isArray":32,"../object/keysIn":38,"./isIndex":25,"./isLength":27}],30:[function(require,module,exports){
-var isObject = require('../lang/isObject');
-
-/**
- * Converts `value` to an object if it's not one.
- *
- * @private
- * @param {*} value The value to process.
- * @returns {Object} Returns the object.
- */
-function toObject(value) {
-  return isObject(value) ? value : Object(value);
-}
-
-module.exports = toObject;
-
-},{"../lang/isObject":35}],31:[function(require,module,exports){
-var isArrayLike = require('../internal/isArrayLike'),
-    isObjectLike = require('../internal/isObjectLike');
-
-/** Used for native method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Native method references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
-
-/**
- * Checks if `value` is classified as an `arguments` object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isArguments(function() { return arguments; }());
- * // => true
- *
- * _.isArguments([1, 2, 3]);
- * // => false
- */
-function isArguments(value) {
-  return isObjectLike(value) && isArrayLike(value) &&
-    hasOwnProperty.call(value, 'callee') && !propertyIsEnumerable.call(value, 'callee');
-}
-
-module.exports = isArguments;
-
-},{"../internal/isArrayLike":24,"../internal/isObjectLike":28}],32:[function(require,module,exports){
-var getNative = require('../internal/getNative'),
-    isLength = require('../internal/isLength'),
-    isObjectLike = require('../internal/isObjectLike');
-
-/** `Object#toString` result references. */
-var arrayTag = '[object Array]';
-
-/** Used for native method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objToString = objectProto.toString;
-
-/* Native method references for those with the same name as other `lodash` methods. */
-var nativeIsArray = getNative(Array, 'isArray');
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(function() { return arguments; }());
- * // => false
- */
-var isArray = nativeIsArray || function(value) {
-  return isObjectLike(value) && isLength(value.length) && objToString.call(value) == arrayTag;
-};
-
-module.exports = isArray;
-
-},{"../internal/getNative":23,"../internal/isLength":27,"../internal/isObjectLike":28}],33:[function(require,module,exports){
-var isObject = require('./isObject');
-
-/** `Object#toString` result references. */
-var funcTag = '[object Function]';
-
-/** Used for native method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objToString = objectProto.toString;
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in older versions of Chrome and Safari which return 'function' for regexes
-  // and Safari 8 which returns 'object' for typed array constructors.
-  return isObject(value) && objToString.call(value) == funcTag;
-}
-
-module.exports = isFunction;
-
-},{"./isObject":35}],34:[function(require,module,exports){
-var isFunction = require('./isFunction'),
-    isObjectLike = require('../internal/isObjectLike');
-
-/** Used to detect host constructors (Safari > 5). */
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-/** Used for native method references. */
-var objectProto = Object.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var fnToString = Function.prototype.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Used to detect if a method is native. */
-var reIsNative = RegExp('^' +
-  fnToString.call(hasOwnProperty).replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
-  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-);
-
-/**
- * Checks if `value` is a native function.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
- * @example
- *
- * _.isNative(Array.prototype.push);
- * // => true
- *
- * _.isNative(_);
- * // => false
- */
-function isNative(value) {
-  if (value == null) {
-    return false;
-  }
-  if (isFunction(value)) {
-    return reIsNative.test(fnToString.call(value));
-  }
-  return isObjectLike(value) && reIsHostCtor.test(value);
-}
-
-module.exports = isNative;
-
-},{"../internal/isObjectLike":28,"./isFunction":33}],35:[function(require,module,exports){
-/**
- * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
- * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(1);
- * // => false
- */
-function isObject(value) {
-  // Avoid a V8 JIT bug in Chrome 19-20.
-  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-module.exports = isObject;
-
-},{}],36:[function(require,module,exports){
-var assignWith = require('../internal/assignWith'),
-    baseAssign = require('../internal/baseAssign'),
-    createAssigner = require('../internal/createAssigner');
-
-/**
- * Assigns own enumerable properties of source object(s) to the destination
- * object. Subsequent sources overwrite property assignments of previous sources.
- * If `customizer` is provided it's invoked to produce the assigned values.
- * The `customizer` is bound to `thisArg` and invoked with five arguments:
- * (objectValue, sourceValue, key, object, source).
- *
- * **Note:** This method mutates `object` and is based on
- * [`Object.assign`](http://ecma-international.org/ecma-262/6.0/#sec-object.assign).
- *
- * @static
- * @memberOf _
- * @alias extend
- * @category Object
- * @param {Object} object The destination object.
- * @param {...Object} [sources] The source objects.
- * @param {Function} [customizer] The function to customize assigned values.
- * @param {*} [thisArg] The `this` binding of `customizer`.
- * @returns {Object} Returns `object`.
- * @example
- *
- * _.assign({ 'user': 'barney' }, { 'age': 40 }, { 'user': 'fred' });
- * // => { 'user': 'fred', 'age': 40 }
- *
- * // using a customizer callback
- * var defaults = _.partialRight(_.assign, function(value, other) {
- *   return _.isUndefined(value) ? other : value;
- * });
- *
- * defaults({ 'user': 'barney' }, { 'age': 36 }, { 'user': 'fred' });
- * // => { 'user': 'barney', 'age': 36 }
- */
-var assign = createAssigner(function(object, source, customizer) {
-  return customizer
-    ? assignWith(object, source, customizer)
-    : baseAssign(object, source);
+/***/ }),
+
+/***/ "./node_modules/camunda-transaction-boundaries/lib/index.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/camunda-transaction-boundaries/lib/index.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TransactionBoundaries__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TransactionBoundaries */ "./node_modules/camunda-transaction-boundaries/lib/TransactionBoundaries.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  __init__: [ 'transactionBoundaries' ],
+  'transactionBoundaries': [ 'type', _TransactionBoundaries__WEBPACK_IMPORTED_MODULE_0__["default"] ]
 });
 
-module.exports = assign;
+/***/ }),
 
-},{"../internal/assignWith":10,"../internal/baseAssign":11,"../internal/createAssigner":18}],37:[function(require,module,exports){
-var getNative = require('../internal/getNative'),
-    isArrayLike = require('../internal/isArrayLike'),
-    isObject = require('../lang/isObject'),
-    shimKeys = require('../internal/shimKeys');
+/***/ "./node_modules/min-dash/dist/index.esm.js":
+/*!*************************************************!*\
+  !*** ./node_modules/min-dash/dist/index.esm.js ***!
+  \*************************************************/
+/*! exports provided: flatten, find, findIndex, filter, forEach, without, reduce, every, some, map, keys, size, values, groupBy, uniqueBy, unionBy, sortBy, matchPattern, debounce, throttle, bind, isUndefined, isDefined, isNil, isArray, isObject, isNumber, isFunction, isString, ensureArray, has, assign, pick, omit, merge */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/* Native method references for those with the same name as other `lodash` methods. */
-var nativeKeys = getNative(Object, 'keys');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flatten", function() { return flatten; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "find", function() { return find; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findIndex", function() { return findIndex; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filter", function() { return filter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "forEach", function() { return forEach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "without", function() { return without; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reduce", function() { return reduce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "every", function() { return every; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "some", function() { return some; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "map", function() { return map; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "keys", function() { return keys; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "size", function() { return size; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "values", function() { return values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "groupBy", function() { return groupBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uniqueBy", function() { return uniqueBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unionBy", function() { return unionBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortBy", function() { return sortBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "matchPattern", function() { return matchPattern; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return debounce; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "throttle", function() { return throttle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bind", function() { return bind; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isUndefined", function() { return isUndefined; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDefined", function() { return isDefined; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNil", function() { return isNil; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isArray", function() { return isArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isObject", function() { return isObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNumber", function() { return isNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isFunction", function() { return isFunction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isString", function() { return isString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ensureArray", function() { return ensureArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "has", function() { return has; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "assign", function() { return assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pick", function() { return pick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "omit", function() { return omit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "merge", function() { return merge; });
+/**
+ * Flatten array, one level deep.
+ *
+ * @param {Array<?>} arr
+ *
+ * @return {Array<?>}
+ */
+function flatten(arr) {
+  return Array.prototype.concat.apply([], arr);
+}
+
+var nativeToString = Object.prototype.toString;
+var nativeHasOwnProperty = Object.prototype.hasOwnProperty;
+
+function isUndefined(obj) {
+  return obj === undefined;
+}
+
+function isDefined(obj) {
+  return obj !== undefined;
+}
+
+function isNil(obj) {
+  return obj == null;
+}
+
+function isArray(obj) {
+  return nativeToString.call(obj) === '[object Array]';
+}
+
+function isObject(obj) {
+  return nativeToString.call(obj) === '[object Object]';
+}
+
+function isNumber(obj) {
+  return nativeToString.call(obj) === '[object Number]';
+}
+
+function isFunction(obj) {
+  return nativeToString.call(obj) === '[object Function]';
+}
+
+function isString(obj) {
+  return nativeToString.call(obj) === '[object String]';
+}
 
 /**
- * Creates an array of the own enumerable property names of `object`.
+ * Ensure collection is an array.
  *
- * **Note:** Non-object values are coerced to objects. See the
- * [ES spec](http://ecma-international.org/ecma-262/6.0/#sec-object.keys)
- * for more details.
- *
- * @static
- * @memberOf _
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keys(new Foo);
- * // => ['a', 'b'] (iteration order is not guaranteed)
- *
- * _.keys('hi');
- * // => ['0', '1']
+ * @param {Object} obj
  */
-var keys = !nativeKeys ? shimKeys : function(object) {
-  var Ctor = object == null ? undefined : object.constructor;
-  if ((typeof Ctor == 'function' && Ctor.prototype === object) ||
-      (typeof object != 'function' && isArrayLike(object))) {
-    return shimKeys(object);
+function ensureArray(obj) {
+
+  if (isArray(obj)) {
+    return;
   }
-  return isObject(object) ? nativeKeys(object) : [];
-};
 
-module.exports = keys;
-
-},{"../internal/getNative":23,"../internal/isArrayLike":24,"../internal/shimKeys":29,"../lang/isObject":35}],38:[function(require,module,exports){
-var isArguments = require('../lang/isArguments'),
-    isArray = require('../lang/isArray'),
-    isIndex = require('../internal/isIndex'),
-    isLength = require('../internal/isLength'),
-    isObject = require('../lang/isObject');
-
-/** Used for native method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+  throw new Error('must supply array');
+}
 
 /**
- * Creates an array of the own and inherited enumerable property names of `object`.
+ * Return true, if target owns a property with the given key.
  *
- * **Note:** Non-object values are coerced to objects.
+ * @param {Object} target
+ * @param {String} key
  *
- * @static
- * @memberOf _
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keysIn(new Foo);
- * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+ * @return {Boolean}
  */
-function keysIn(object) {
-  if (object == null) {
-    return [];
-  }
-  if (!isObject(object)) {
-    object = Object(object);
-  }
-  var length = object.length;
-  length = (length && isLength(length) &&
-    (isArray(object) || isArguments(object)) && length) || 0;
+function has(target, key) {
+  return nativeHasOwnProperty.call(target, key);
+}
 
-  var Ctor = object.constructor,
-      index = -1,
-      isProto = typeof Ctor == 'function' && Ctor.prototype === object,
-      result = Array(length),
-      skipIndexes = length > 0;
+/**
+ * Find element in collection.
+ *
+ * @param  {Array|Object} collection
+ * @param  {Function|Object} matcher
+ *
+ * @return {Object}
+ */
+function find(collection, matcher) {
 
-  while (++index < length) {
-    result[index] = (index + '');
-  }
-  for (var key in object) {
-    if (!(skipIndexes && isIndex(key, length)) &&
-        !(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
-      result.push(key);
+  matcher = toMatcher(matcher);
+
+  var match;
+
+  forEach(collection, function (val, key) {
+    if (matcher(val, key)) {
+      match = val;
+
+      return false;
     }
-  }
+  });
+
+  return match;
+}
+
+/**
+ * Find element index in collection.
+ *
+ * @param  {Array|Object} collection
+ * @param  {Function} matcher
+ *
+ * @return {Object}
+ */
+function findIndex(collection, matcher) {
+
+  matcher = toMatcher(matcher);
+
+  var idx = isArray(collection) ? -1 : undefined;
+
+  forEach(collection, function (val, key) {
+    if (matcher(val, key)) {
+      idx = key;
+
+      return false;
+    }
+  });
+
+  return idx;
+}
+
+/**
+ * Find element in collection.
+ *
+ * @param  {Array|Object} collection
+ * @param  {Function} matcher
+ *
+ * @return {Array} result
+ */
+function filter(collection, matcher) {
+
+  var result = [];
+
+  forEach(collection, function (val, key) {
+    if (matcher(val, key)) {
+      result.push(val);
+    }
+  });
+
   return result;
 }
 
-module.exports = keysIn;
-
-},{"../internal/isIndex":25,"../internal/isLength":27,"../lang/isArguments":31,"../lang/isArray":32,"../lang/isObject":35}],39:[function(require,module,exports){
 /**
- * This method returns the first argument provided to it.
+ * Iterate over collection; returning something
+ * (non-undefined) will stop iteration.
  *
- * @static
- * @memberOf _
- * @category Utility
- * @param {*} value Any value.
- * @returns {*} Returns `value`.
- * @example
+ * @param  {Array|Object} collection
+ * @param  {Function} iterator
  *
- * var object = { 'user': 'fred' };
- *
- * _.identity(object) === object;
- * // => true
+ * @return {Object} return result that stopped the iteration
  */
-function identity(value) {
-  return value;
+function forEach(collection, iterator) {
+
+  if (isUndefined(collection)) {
+    return;
+  }
+
+  var convertKey = isArray(collection) ? toNum : identity;
+
+  for (var key in collection) {
+
+    if (has(collection, key)) {
+      var val = collection[key];
+
+      var result = iterator(val, convertKey(key));
+
+      if (result === false) {
+        return;
+      }
+    }
+  }
 }
 
-module.exports = identity;
+/**
+ * Return collection without element.
+ *
+ * @param  {Array} arr
+ * @param  {Function} matcher
+ *
+ * @return {Array}
+ */
+function without(arr, matcher) {
 
-},{}]},{},[1]);
+  if (isUndefined(arr)) {
+    return [];
+  }
+
+  ensureArray(arr);
+
+  matcher = toMatcher(matcher);
+
+  return arr.filter(function (el, idx) {
+    return !matcher(el, idx);
+  });
+}
+
+/**
+ * Reduce collection, returning a single result.
+ *
+ * @param  {Object|Array} collection
+ * @param  {Function} iterator
+ * @param  {Any} result
+ *
+ * @return {Any} result returned from last iterator
+ */
+function reduce(collection, iterator, result) {
+
+  forEach(collection, function (value, idx) {
+    result = iterator(result, value, idx);
+  });
+
+  return result;
+}
+
+/**
+ * Return true if every element in the collection
+ * matches the criteria.
+ *
+ * @param  {Object|Array} collection
+ * @param  {Function} matcher
+ *
+ * @return {Boolean}
+ */
+function every(collection, matcher) {
+
+  return reduce(collection, function (matches, val, key) {
+    return matches && matcher(val, key);
+  }, true);
+}
+
+/**
+ * Return true if some elements in the collection
+ * match the criteria.
+ *
+ * @param  {Object|Array} collection
+ * @param  {Function} matcher
+ *
+ * @return {Boolean}
+ */
+function some(collection, matcher) {
+
+  return !!find(collection, matcher);
+}
+
+/**
+ * Transform a collection into another collection
+ * by piping each member through the given fn.
+ *
+ * @param  {Object|Array}   collection
+ * @param  {Function} fn
+ *
+ * @return {Array} transformed collection
+ */
+function map(collection, fn) {
+
+  var result = [];
+
+  forEach(collection, function (val, key) {
+    result.push(fn(val, key));
+  });
+
+  return result;
+}
+
+/**
+ * Get the collections keys.
+ *
+ * @param  {Object|Array} collection
+ *
+ * @return {Array}
+ */
+function keys(collection) {
+  return collection && Object.keys(collection) || [];
+}
+
+/**
+ * Shorthand for `keys(o).length`.
+ *
+ * @param  {Object|Array} collection
+ *
+ * @return {Number}
+ */
+function size(collection) {
+  return keys(collection).length;
+}
+
+/**
+ * Get the values in the collection.
+ *
+ * @param  {Object|Array} collection
+ *
+ * @return {Array}
+ */
+function values(collection) {
+  return map(collection, function (val) {
+    return val;
+  });
+}
+
+/**
+ * Group collection members by attribute.
+ *
+ * @param  {Object|Array} collection
+ * @param  {Function} extractor
+ *
+ * @return {Object} map with { attrValue => [ a, b, c ] }
+ */
+function groupBy(collection, extractor) {
+  var grouped = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+
+  extractor = toExtractor(extractor);
+
+  forEach(collection, function (val) {
+    var discriminator = extractor(val) || '_';
+
+    var group = grouped[discriminator];
+
+    if (!group) {
+      group = grouped[discriminator] = [];
+    }
+
+    group.push(val);
+  });
+
+  return grouped;
+}
+
+function uniqueBy(extractor) {
+
+  extractor = toExtractor(extractor);
+
+  var grouped = {};
+
+  for (var _len = arguments.length, collections = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    collections[_key - 1] = arguments[_key];
+  }
+
+  forEach(collections, function (c) {
+    return groupBy(c, extractor, grouped);
+  });
+
+  var result = map(grouped, function (val, key) {
+    return val[0];
+  });
+
+  return result;
+}
+
+var unionBy = uniqueBy;
+
+/**
+ * Sort collection by criteria.
+ *
+ * @param  {Object|Array} collection
+ * @param  {String|Function} extractor
+ *
+ * @return {Array}
+ */
+function sortBy(collection, extractor) {
+
+  extractor = toExtractor(extractor);
+
+  var sorted = [];
+
+  forEach(collection, function (value, key) {
+    var disc = extractor(value, key);
+
+    var entry = {
+      d: disc,
+      v: value
+    };
+
+    for (var idx = 0; idx < sorted.length; idx++) {
+      var d = sorted[idx].d;
+
+
+      if (disc < d) {
+        sorted.splice(idx, 0, entry);
+        return;
+      }
+    }
+
+    // not inserted, append (!)
+    sorted.push(entry);
+  });
+
+  return map(sorted, function (e) {
+    return e.v;
+  });
+}
+
+/**
+ * Create an object pattern matcher.
+ *
+ * @example
+ *
+ * const matcher = matchPattern({ id: 1 });
+ *
+ * var element = find(elements, matcher);
+ *
+ * @param  {Object} pattern
+ *
+ * @return {Function} matcherFn
+ */
+function matchPattern(pattern) {
+
+  return function (el) {
+
+    return every(pattern, function (val, key) {
+      return el[key] === val;
+    });
+  };
+}
+
+function toExtractor(extractor) {
+  return isFunction(extractor) ? extractor : function (e) {
+    return e[extractor];
+  };
+}
+
+function toMatcher(matcher) {
+  return isFunction(matcher) ? matcher : function (e) {
+    return e === matcher;
+  };
+}
+
+function identity(arg) {
+  return arg;
+}
+
+function toNum(arg) {
+  return Number(arg);
+}
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var slice = Array.prototype.slice;
+
+/**
+ * Debounce fn, calling it only once if
+ * the given time elapsed between calls.
+ *
+ * @param  {Function} fn
+ * @param  {Number} timeout
+ *
+ * @return {Function} debounced function
+ */
+function debounce(fn, timeout) {
+
+  var timer;
+
+  return function () {
+
+    var args = slice.call(arguments);
+
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(function () {
+      fn.apply(undefined, _toConsumableArray(args));
+    }, timeout);
+  };
+}
+
+/**
+ * Throttle fn, calling at most once
+ * in the given interval.
+ *
+ * @param  {Function} fn
+ * @param  {Number} interval
+ *
+ * @return {Function} throttled function
+ */
+function throttle(fn, interval) {
+
+  var throttling = false;
+
+  return function () {
+
+    if (throttling) {
+      return;
+    }
+
+    fn.apply(undefined, arguments);
+    throttling = true;
+
+    setTimeout(function () {
+      throttling = false;
+    }, interval);
+  };
+}
+
+/**
+ * Bind function against target <this>.
+ *
+ * @param  {Function} fn
+ * @param  {Object}   target
+ *
+ * @return {Function} bound function
+ */
+function bind(fn, target) {
+  return fn.bind(target);
+}
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+/**
+ * Convenience wrapper for `Object.assign`.
+ *
+ * @param {Object} target
+ * @param {...Object} others
+ *
+ * @return {Object} the target
+ */
+function assign(target) {
+  for (var _len = arguments.length, others = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    others[_key - 1] = arguments[_key];
+  }
+
+  return _extends.apply(undefined, [target].concat(others));
+}
+
+/**
+ * Pick given properties from the target object.
+ *
+ * @param {Object} target
+ * @param {Array} properties
+ *
+ * @return {Object} target
+ */
+function pick(target, properties) {
+
+  var result = {};
+
+  var obj = Object(target);
+
+  forEach(properties, function (prop) {
+
+    if (prop in obj) {
+      result[prop] = target[prop];
+    }
+  });
+
+  return result;
+}
+
+/**
+ * Pick all target properties, excluding the given ones.
+ *
+ * @param {Object} target
+ * @param {Array} properties
+ *
+ * @return {Object} target
+ */
+function omit(target, properties) {
+
+  var result = {};
+
+  var obj = Object(target);
+
+  forEach(obj, function (prop, key) {
+
+    if (properties.indexOf(key) === -1) {
+      result[key] = prop;
+    }
+  });
+
+  return result;
+}
+
+/**
+ * Recursively merge `...sources` into given target.
+ *
+ * Does support merging objects; does not support merging arrays.
+ *
+ * @param {Object} target
+ * @param {...Object} sources
+ *
+ * @return {Object} the target
+ */
+function merge(target) {
+  for (var _len2 = arguments.length, sources = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+    sources[_key2 - 1] = arguments[_key2];
+  }
+
+  if (!sources.length) {
+    return target;
+  }
+
+  forEach(sources, function (source) {
+
+    // skip non-obj sources, i.e. null
+    if (!source || !isObject(source)) {
+      return;
+    }
+
+    forEach(source, function (sourceVal, key) {
+
+      var targetVal = target[key];
+
+      if (isObject(sourceVal)) {
+
+        if (!isObject(targetVal)) {
+          // override target[key] with object
+          targetVal = {};
+        }
+
+        target[key] = merge(targetVal, sourceVal);
+      } else {
+        target[key] = sourceVal;
+      }
+    });
+  });
+
+  return target;
+}
+
+
+
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=client-bundle.js.map
