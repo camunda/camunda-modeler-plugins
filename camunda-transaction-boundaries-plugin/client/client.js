@@ -1,4 +1,7 @@
-var registerBpmnJSPlugin = require('camunda-modeler-plugin-helpers').registerBpmnJSPlugin;
-var plugin = require('./transaction-boundaries-with-editor-actions');
+import {
+  registerBpmnJSPlugin
+} from 'camunda-modeler-plugin-helpers';
 
-registerBpmnJSPlugin(plugin);
+import module from './module';
+
+registerBpmnJSPlugin(module);
