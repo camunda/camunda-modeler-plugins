@@ -314,6 +314,7 @@ TransactionBoundaries.$inject = [ 'elementRegistry', 'overlays', 'eventBus' ];
  * - Receive Task
  * - User Task
  * - Event Based Gateway
+ * - External Service Task
  *
  * Furthermore all activities which have asynchronous
  * continuations act as transaction boundaries. This
@@ -337,7 +338,8 @@ TransactionBoundaries.prototype._getTransactionBoundaries = function(element) {
       loopCharacteristics = businessObject.loopCharacteristics,
       eventDefinitionType = businessObject.eventDefinitions && businessObject.eventDefinitions[0].$type;
 
-  var isWaitStateTask = element.type === 'bpmn:ReceiveTask' || element.type === 'bpmn:UserTask';
+  var isWaitStateTask = element.type === 'bpmn:ReceiveTask' || element.type === 'bpmn:UserTask'
+        || (element.type === 'bpmn:ServiceTask' && businessObject.type === 'external');
 
   var isWaitStateGateway = element.type === 'bpmn:EventBasedGateway';
 
@@ -1129,10 +1131,6 @@ function toNum(arg) {
   return Number(arg);
 }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var slice = Array.prototype.slice;
-
 /**
  * Debounce fn, calling it only once if
  * the given time elapsed between calls.
@@ -1146,17 +1144,45 @@ function debounce(fn, timeout) {
 
   var timer;
 
-  return function () {
+  var lastArgs;
+  var lastThis;
 
-    var args = slice.call(arguments);
+  var lastNow;
 
-    if (timer) {
-      clearTimeout(timer);
+  function fire() {
+
+    var now = Date.now();
+
+    var scheduledDiff = lastNow + timeout - now;
+
+    if (scheduledDiff > 0) {
+      return schedule(scheduledDiff);
     }
 
-    timer = setTimeout(function () {
-      fn.apply(undefined, _toConsumableArray(args));
-    }, timeout);
+    fn.apply(lastThis, lastArgs);
+
+    timer = lastNow = lastArgs = lastThis = undefined;
+  }
+
+  function schedule(timeout) {
+    timer = setTimeout(fire, timeout);
+  }
+
+  return function () {
+
+    lastNow = Date.now();
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    lastArgs = args;
+    lastThis = this;
+
+    // ensure an execution is scheduled
+    if (!timer) {
+      schedule(timeout);
+    }
   };
 }
 
