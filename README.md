@@ -26,6 +26,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 * [Color Picker](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-color-picker) - A very basic Color Picker plugin which makes all colors available for the modeler
 * [Technical ID Generator](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-rename-technical-ids) - This plugin helps you to generate technical IDs for BPMN symbols according to best practices
 * [Reduced Palette](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-reduced-palette) - This plugin showcases how the palette and contextpad can be modified if you don't want to use all symbols
+* [Generated Form Preview](https://github.com/camunda-consulting/code/tree/master/snippets/camunda-modeler-plugins/camunda-modeler-plugin-usertask-generatedform-preview) - This plugin adds a 'Preview Form' Button to all BPMN User Tasks in the Camunda Modeler Properties Panel. Once you click on this button a overlay with show you a preview of your form that has been defined as form fields in the UserTask Forms Tab. It shows you how the form will look like in the default Camunda Tasklist.
 
 
 ## Additional Resources
