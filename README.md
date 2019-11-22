@@ -29,6 +29,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 * [Generated Form Preview](https://github.com/camunda-consulting/code/tree/master/snippets/camunda-modeler-plugins/camunda-modeler-plugin-usertask-generatedform-preview) - This plugin adds a 'Preview Form' Button to all BPMN User Tasks in the Camunda Modeler Properties Panel. Once you click on this button a overlay with show you a preview of your form that has been defined as form fields in the UserTask Forms Tab. It shows you how the form will look like in the default Camunda Tasklist.
 * [Process I/O Specification](https://github.com/camunda/camunda-modeler-process-io-specification-plugin) - allows you to document your proces input and output specifications
 * [Linter Plugin](https://github.com/camunda/camunda-modeler-linter-plugin) - validate your BPMN diagrams using configurable lint rules
+* [Autosave Plugin](https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin) - automatically save your diagrams modeled in Camunda Modeler
 
 ## Additional Resources
 
