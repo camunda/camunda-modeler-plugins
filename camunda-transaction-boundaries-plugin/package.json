@@ -1,6 +1,6 @@
 {
   "name": "camunda-transaction-boundaries-plugin",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Camunda Transaction Boundaries Plugin for the Camunda Modeler",
   "main": "index.js",
   "scripts": {
