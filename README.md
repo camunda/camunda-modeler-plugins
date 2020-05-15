@@ -24,6 +24,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 #### Other
 
 * [Property Info Plugin](https://github.com/umb/camunda-modeler-property-info-plugin) - visualizes technical attributes like execution listeners, I/O mappings, field injections and extensions
+* [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - adds tooltips to various BPMN-elements revealing some properties and conditional flows
 * [Color Picker](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-color-picker) - A very basic Color Picker plugin which makes all colors available for the modeler
 * [Technical ID Generator](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-rename-technical-ids) - This plugin helps you to generate technical IDs for BPMN symbols according to best practices
 * [Reduced Palette](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-reduced-palette) - This plugin showcases how the palette and contextpad can be modified if you don't want to use all symbols
