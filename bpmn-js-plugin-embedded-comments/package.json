@@ -1,10 +1,11 @@
 {
   "name": "camunda-modeler-bpmn-js-embedded-comments",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "bpmn-js Embedded Comments Plugin for the Camunda Modeler",
   "main": "index.js",
   "scripts": {
-    "client": "browserify client/client.js > client/client-bundle.js"
+    "bundle": "webpack",
+    "bundle:watch": "webpack -w"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
   "homepage": "https://github.com/camunda/camunda-modeler-plugins#readme",
   "devDependencies": {
     "bpmn-js-embedded-comments": "^0.5.0",
-    "browserify": "^14.1.0",
-    "camunda-modeler-plugin-helpers": "^1.7.0"
+    "camunda-modeler-plugin-helpers": "^3.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
