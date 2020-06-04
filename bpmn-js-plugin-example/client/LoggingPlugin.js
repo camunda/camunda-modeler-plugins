@@ -1,12 +1,21 @@
-'use strict';
+class LoggingPlugin {
 
-function LoggingPlugin(eventBus) {
-  eventBus.on('shape.added', function(event) {
-    console.log('%c A shape was added to the diagram!', 'background-color: #52b415; color: #fff; font-size: 24px;');
-  });
+  // `eventBus` will be injected through dependency injection
+  constructor(eventBus) {
+    eventBus.on('shape.added', (context) => {
+      
+      // Inspect `context` to see all the information that is provided in the context of this event
+      console.log('A shape was added to the diagram!', context);
+    });
+  }
 }
 
-module.exports = {
+// Use `$inject` to specify what modules should be injected
+LoggingPlugin.$inject = [ 'eventBus' ];
+
+// Specify the module using a unique name
+// Use __init__ to make sure an instance will be created
+export default {
   __init__: [ 'loggingPlugin' ],
   loggingPlugin: [ 'type', LoggingPlugin ]
 };
