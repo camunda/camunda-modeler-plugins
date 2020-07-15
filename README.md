@@ -29,6 +29,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 ### General
 
 * [Autosave Plugin](https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin) - A Camunda Modeler plugin that automatically saves your diagrams.
+* [Internationalization Plugin](https://github.com/FlowSquad/camunda-modeler-i18n-plugin) - A Camunda Modeler Plugin that allows you to translate the UI.
 
 ### bpmn-js
 
