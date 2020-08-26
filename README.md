@@ -19,6 +19,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 ### dmn-js
 
 * [dmn-js Plugin Example](./dmn-js-plugin-example) - an example of how to create a dmn-js plugin.
+* [dmn-testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A Plugin to test your DMN tables 
 
 ### Other
 
