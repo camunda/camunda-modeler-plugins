@@ -43,6 +43,10 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 * [Technical ID Generator](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-rename-technical-ids) - A plugin that generates technical IDs for BPMN elements according to best practices.
 * [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - Adds tooltips to various BPMN elements revealing hidden properties and conditional flows.
 
+### dmn-js
+
+* [DMN Testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A Camunda Modeler plugin to test your DMN decision tables and decision graphs using an embedded Camunda decision engine.
+
 ## Additional Resources
 
 * [Plugins documentation](https://github.com/camunda/camunda-modeler/tree/master/docs/plugins)
