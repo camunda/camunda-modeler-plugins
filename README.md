@@ -46,6 +46,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 ### dmn-js
 
 * [DMN Testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A Camunda Modeler plugin to test your DMN decision tables and decision graphs using an embedded Camunda decision engine.
+* [Excel Import Plugin](https://github.com/pinussilvestrus/camunda-modeler-excel-import-plugin) - Camunda Modeler Plugin to import Excel Sheets to DMN Tables.
 
 ## Additional Resources
 
