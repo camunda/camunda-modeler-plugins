@@ -30,6 +30,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 
 * [Autosave Plugin](https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin) - A Camunda Modeler plugin that automatically saves your diagrams.
 * [Internationalization Plugin](https://github.com/FlowSquad/camunda-modeler-i18n-plugin) - A Camunda Modeler Plugin that allows you to translate the UI.
+* [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A Camunda Modeler plugin that allows to manage multiple diagrams on a single BPMN file.
 
 ### bpmn-js
 
