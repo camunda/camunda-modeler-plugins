@@ -5,7 +5,7 @@ Use this example as a starting point if you want to extend bpmn-js with your own
 First, let's create a new moddle extension. In this case we're creating a simple moddle extension that allows custom data to be added to BPMN flow nodes:
 
 ```javascript
-// See `client/LoggingPlugin.js`
+// See `resources/qa.json`
 
 {
   "name": "QualityAssurance",
