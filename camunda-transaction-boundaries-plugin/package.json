@@ -30,8 +30,8 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "camunda-modeler-plugin-helpers": "^3.0.0",
-    "camunda-transaction-boundaries": "^1.1.1",
-    "inherits": "^2.0.3"
+    "camunda-modeler-plugin-helpers": "^3.1.0",
+    "camunda-transaction-boundaries": "^1.1.2",
+    "inherits": "^2.0.4"
   }
 }
