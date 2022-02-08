@@ -96,15 +96,22 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 class LoggingPlugin {
+
+  // `eventBus` will be injected through dependency injection
   constructor(eventBus) {
-    eventBus.on('shape.added', () => {
-      console.log('A shape was added to the diagram!');
+    eventBus.on('shape.added', (context) => {
+      
+      // Inspect `context` to see all the information that is provided in the context of this event
+      console.log('A shape was added to the diagram!', context);
     });
   }
 }
 
+// Use `$inject` to specify what modules should be injected
 LoggingPlugin.$inject = [ 'eventBus' ];
 
+// Specify the module using a unique name
+// Use __init__ to make sure an instance will be created
 /* harmony default export */ __webpack_exports__["default"] = ({
   __init__: [ 'loggingPlugin' ],
   loggingPlugin: [ 'type', LoggingPlugin ]
@@ -128,6 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// Register a plugin for dmn-js' DRD modeler
 Object(camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__["registerDmnJSPlugin"])(_LoggingPlugin__WEBPACK_IMPORTED_MODULE_1__["default"], [ 'drd' ]);
 
 /***/ }),
