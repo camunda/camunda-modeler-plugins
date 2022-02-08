@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/camunda/camunda-modeler-plugins#readme",
   "devDependencies": {
-    "bpmn-js-embedded-comments": "^0.5.0",
+    "bpmn-js-embedded-comments": "^0.6.1",
     "camunda-modeler-plugin-helpers": "^3.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"

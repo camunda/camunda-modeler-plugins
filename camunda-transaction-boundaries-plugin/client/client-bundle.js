@@ -566,41 +566,43 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "flatten": () => (/* binding */ flatten),
+/* harmony export */   "assign": () => (/* binding */ assign),
+/* harmony export */   "bind": () => (/* binding */ bind),
+/* harmony export */   "debounce": () => (/* binding */ debounce),
+/* harmony export */   "ensureArray": () => (/* binding */ ensureArray),
+/* harmony export */   "every": () => (/* binding */ every),
+/* harmony export */   "filter": () => (/* binding */ filter),
 /* harmony export */   "find": () => (/* binding */ find),
 /* harmony export */   "findIndex": () => (/* binding */ findIndex),
-/* harmony export */   "filter": () => (/* binding */ filter),
+/* harmony export */   "flatten": () => (/* binding */ flatten),
 /* harmony export */   "forEach": () => (/* binding */ forEach),
-/* harmony export */   "without": () => (/* binding */ without),
-/* harmony export */   "reduce": () => (/* binding */ reduce),
-/* harmony export */   "every": () => (/* binding */ every),
-/* harmony export */   "some": () => (/* binding */ some),
-/* harmony export */   "map": () => (/* binding */ map),
-/* harmony export */   "keys": () => (/* binding */ keys),
-/* harmony export */   "size": () => (/* binding */ size),
-/* harmony export */   "values": () => (/* binding */ values),
+/* harmony export */   "get": () => (/* binding */ get),
 /* harmony export */   "groupBy": () => (/* binding */ groupBy),
-/* harmony export */   "uniqueBy": () => (/* binding */ uniqueBy),
-/* harmony export */   "unionBy": () => (/* binding */ unionBy),
-/* harmony export */   "sortBy": () => (/* binding */ sortBy),
-/* harmony export */   "matchPattern": () => (/* binding */ matchPattern),
-/* harmony export */   "debounce": () => (/* binding */ debounce),
-/* harmony export */   "throttle": () => (/* binding */ throttle),
-/* harmony export */   "bind": () => (/* binding */ bind),
-/* harmony export */   "isUndefined": () => (/* binding */ isUndefined),
-/* harmony export */   "isDefined": () => (/* binding */ isDefined),
-/* harmony export */   "isNil": () => (/* binding */ isNil),
-/* harmony export */   "isArray": () => (/* binding */ isArray),
-/* harmony export */   "isObject": () => (/* binding */ isObject),
-/* harmony export */   "isNumber": () => (/* binding */ isNumber),
-/* harmony export */   "isFunction": () => (/* binding */ isFunction),
-/* harmony export */   "isString": () => (/* binding */ isString),
-/* harmony export */   "ensureArray": () => (/* binding */ ensureArray),
 /* harmony export */   "has": () => (/* binding */ has),
-/* harmony export */   "assign": () => (/* binding */ assign),
-/* harmony export */   "pick": () => (/* binding */ pick),
+/* harmony export */   "isArray": () => (/* binding */ isArray),
+/* harmony export */   "isDefined": () => (/* binding */ isDefined),
+/* harmony export */   "isFunction": () => (/* binding */ isFunction),
+/* harmony export */   "isNil": () => (/* binding */ isNil),
+/* harmony export */   "isNumber": () => (/* binding */ isNumber),
+/* harmony export */   "isObject": () => (/* binding */ isObject),
+/* harmony export */   "isString": () => (/* binding */ isString),
+/* harmony export */   "isUndefined": () => (/* binding */ isUndefined),
+/* harmony export */   "keys": () => (/* binding */ keys),
+/* harmony export */   "map": () => (/* binding */ map),
+/* harmony export */   "matchPattern": () => (/* binding */ matchPattern),
+/* harmony export */   "merge": () => (/* binding */ merge),
 /* harmony export */   "omit": () => (/* binding */ omit),
-/* harmony export */   "merge": () => (/* binding */ merge)
+/* harmony export */   "pick": () => (/* binding */ pick),
+/* harmony export */   "reduce": () => (/* binding */ reduce),
+/* harmony export */   "set": () => (/* binding */ set),
+/* harmony export */   "size": () => (/* binding */ size),
+/* harmony export */   "some": () => (/* binding */ some),
+/* harmony export */   "sortBy": () => (/* binding */ sortBy),
+/* harmony export */   "throttle": () => (/* binding */ throttle),
+/* harmony export */   "unionBy": () => (/* binding */ unionBy),
+/* harmony export */   "uniqueBy": () => (/* binding */ uniqueBy),
+/* harmony export */   "values": () => (/* binding */ values),
+/* harmony export */   "without": () => (/* binding */ without)
 /* harmony export */ });
 /**
  * Flatten array, one level deep.
@@ -953,7 +955,7 @@ function sortBy(collection, extractor) {
  *
  * const matcher = matchPattern({ id: 1 });
  *
- * var element = find(elements, matcher);
+ * let element = find(elements, matcher);
  *
  * @param  {Object} pattern
  *
@@ -989,8 +991,11 @@ function toNum(arg) {
 }
 
 /**
- * Debounce fn, calling it only once if
- * the given time elapsed between calls.
+ * Debounce fn, calling it only once if the given time
+ * elapsed between calls.
+ *
+ * Lodash-style the function exposes methods to `#clear`
+ * and `#flush` to control internal behavior.
  *
  * @param  {Function} fn
  * @param  {Number} timeout
@@ -1003,23 +1008,39 @@ function debounce(fn, timeout) {
   var lastThis;
   var lastNow;
 
-  function fire() {
+  function fire(force) {
     var now = Date.now();
-    var scheduledDiff = lastNow + timeout - now;
+    var scheduledDiff = force ? 0 : lastNow + timeout - now;
 
     if (scheduledDiff > 0) {
       return schedule(scheduledDiff);
     }
 
     fn.apply(lastThis, lastArgs);
-    timer = lastNow = lastArgs = lastThis = undefined;
+    clear();
   }
 
   function schedule(timeout) {
     timer = setTimeout(fire, timeout);
   }
 
-  return function () {
+  function clear() {
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = lastNow = lastArgs = lastThis = undefined;
+  }
+
+  function flush() {
+    if (timer) {
+      fire(true);
+    }
+
+    clear();
+  }
+
+  function callback() {
     lastNow = Date.now();
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -1032,7 +1053,11 @@ function debounce(fn, timeout) {
     if (!timer) {
       schedule(timeout);
     }
-  };
+  }
+
+  callback.flush = flush;
+  callback.cancel = clear;
+  return callback;
 }
 /**
  * Throttle fn, calling at most once
@@ -1071,6 +1096,22 @@ function bind(fn, target) {
   return fn.bind(target);
 }
 
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
 function _extends() {
   _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -1104,6 +1145,71 @@ function assign(target) {
   }
 
   return _extends.apply(void 0, [target].concat(others));
+}
+/**
+ * Sets a nested property of a given object to the specified value.
+ *
+ * This mutates the object and returns it.
+ *
+ * @param {Object} target The target of the set operation.
+ * @param {(string|number)[]} path The path to the nested value.
+ * @param {any} value The value to set.
+ */
+
+function set(target, path, value) {
+  var currentTarget = target;
+  forEach(path, function (key, idx) {
+    if (typeof key !== 'number' && typeof key !== 'string') {
+      throw new Error('illegal key type: ' + _typeof(key) + '. Key should be of type number or string.');
+    }
+
+    if (key === 'constructor') {
+      throw new Error('illegal key: constructor');
+    }
+
+    if (key === '__proto__') {
+      throw new Error('illegal key: __proto__');
+    }
+
+    var nextKey = path[idx + 1];
+    var nextTarget = currentTarget[key];
+
+    if (isDefined(nextKey) && isNil(nextTarget)) {
+      nextTarget = currentTarget[key] = isNaN(+nextKey) ? {} : [];
+    }
+
+    if (isUndefined(nextKey)) {
+      if (isUndefined(value)) {
+        delete currentTarget[key];
+      } else {
+        currentTarget[key] = value;
+      }
+    } else {
+      currentTarget = nextTarget;
+    }
+  });
+  return target;
+}
+/**
+ * Gets a nested property of a given object.
+ *
+ * @param {Object} target The target of the get operation.
+ * @param {(string|number)[]} path The path to the nested value.
+ * @param {any} [defaultValue] The value to return if no value exists.
+ */
+
+function get(target, path, defaultValue) {
+  var currentTarget = target;
+  forEach(path, function (key) {
+    // accessing nil property yields <undefined>
+    if (isNil(currentTarget)) {
+      currentTarget = undefined;
+      return false;
+    }
+
+    currentTarget = currentTarget[key];
+  });
+  return isUndefined(currentTarget) ? defaultValue : currentTarget;
 }
 /**
  * Pick given properties from the target object.
