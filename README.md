@@ -35,13 +35,13 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 ### bpmn-js
 
 * [bpmn-js Resize Tasks Plugin](https://github.com/philippfromme/camunda-modeler-plugin-resize-tasks) - A Camunda Modeler plugin that makes tasks resizable in bpmn-js.
-* [Color Picker](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-color-picker) - A color picker plugin that lets you choose any color for your BPMN elements.
-* [Generated Form Preview](https://github.com/camunda-consulting/code/tree/master/snippets/camunda-modeler-plugins/camunda-modeler-plugin-usertask-generatedform-preview) - A plugin that allows  you to preview forms in the Camunda Modeler.
+* [Color Picker](https://github.com/camunda-community-hub/camunda-modeler-plugin-color-picker) - A color picker plugin that lets you choose any color for your BPMN elements.
+* [Generated Form Preview](https://github.com/camunda-community-hub/camunda-modeler-plugin-usertask-generatedform-preview) - A plugin that allows  you to preview forms in the Camunda Modeler.
 * [Linter Plugin](https://github.com/camunda/camunda-modeler-linter-plugin) - A Camunda Modeler plugin to validate your BPMN diagrams using configurable linting rules.
 * [Process I/O Specification](https://github.com/camunda/camunda-modeler-process-io-specification-plugin) - A plugin that allows you to document your process input and output specifications.
 * [Property Info Plugin](https://github.com/umb/camunda-modeler-property-info-plugin) - Visualizes technical attributes like execution listeners, I/O mappings, field injections and extensions.
-* [Reduced Palette](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-reduced-palette) - A plugin that reduces the number of available entries in the palette and the context menu.
-* [Technical ID Generator](https://github.com/camunda/camunda-consulting/tree/master/snippets/camunda-modeler-plugins/bpmn-js-plugin-rename-technical-ids) - A plugin that generates technical IDs for BPMN elements according to best practices.
+* [Reduced Palette](https://github.com/camunda-community-hub/camunda-modeler-plugin-reduced-palette) - A plugin that reduces the number of available entries in the palette and the context menu.
+* [Technical ID Generator](https://github.com/camunda-community-hub/camunda-modeler-plugin-rename-technical-ids) - A plugin that generates technical IDs for BPMN elements according to best practices.
 * [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - Adds tooltips to various BPMN elements revealing hidden properties and conditional flows.
 
 ### dmn-js
