@@ -51,8 +51,15 @@ TransactionBoundariesEditorActions.$inject = [
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "registerClientPlugin": () => (/* binding */ registerClientPlugin),
+/* harmony export */   "registerClientExtension": () => (/* binding */ registerClientExtension),
 /* harmony export */   "registerBpmnJSPlugin": () => (/* binding */ registerBpmnJSPlugin),
+/* harmony export */   "registerPlatformBpmnJSPlugin": () => (/* binding */ registerPlatformBpmnJSPlugin),
+/* harmony export */   "registerCloudBpmnJSPlugin": () => (/* binding */ registerCloudBpmnJSPlugin),
 /* harmony export */   "registerBpmnJSModdleExtension": () => (/* binding */ registerBpmnJSModdleExtension),
+/* harmony export */   "registerPlatformBpmnJSModdleExtension": () => (/* binding */ registerPlatformBpmnJSModdleExtension),
+/* harmony export */   "registerCloudBpmnJSModdleExtension": () => (/* binding */ registerCloudBpmnJSModdleExtension),
+/* harmony export */   "registerDmnJSModdleExtension": () => (/* binding */ registerDmnJSModdleExtension),
+/* harmony export */   "registerDmnJSPlugin": () => (/* binding */ registerDmnJSPlugin),
 /* harmony export */   "getModelerDirectory": () => (/* binding */ getModelerDirectory),
 /* harmony export */   "getPluginsDirectory": () => (/* binding */ getPluginsDirectory)
 /* harmony export */ });
@@ -81,6 +88,21 @@ function registerClientPlugin(plugin, type) {
 }
 
 /**
+ * Validate and register a client plugin.
+ *
+ * @param {import('react').ComponentType} extension
+ *
+ * @example
+ *
+ * import MyExtensionComponent from './MyExtensionComponent';
+ *
+ * registerClientExtension(MyExtensionComponent);
+ */
+function registerClientExtension(component) {
+  registerClientPlugin(component, 'client');
+}
+
+/**
  * Validate and register a bpmn-js plugin.
  *
  * @param {Object} module
@@ -100,6 +122,50 @@ function registerClientPlugin(plugin, type) {
  */
 function registerBpmnJSPlugin(module) {
   registerClientPlugin(module, 'bpmn.modeler.additionalModules');
+}
+
+/**
+ * Validate and register a platform specific bpmn-js plugin.
+ *
+ * @param {Object} module
+ *
+ * @example
+ *
+ * import {
+ *   registerPlatformBpmnJSPlugin
+ * } from 'camunda-modeler-plugin-helpers';
+ *
+ * const BpmnJSModule = {
+ *   __init__: [ 'myService' ],
+ *   myService: [ 'type', ... ]
+ * };
+ *
+ * registerPlatformBpmnJSPlugin(BpmnJSModule);
+ */
+function registerPlatformBpmnJSPlugin(module) {
+  registerClientPlugin(module, 'bpmn.platform.modeler.additionalModules');
+}
+
+/**
+ * Validate and register a cloud specific bpmn-js plugin.
+ *
+ * @param {Object} module
+ *
+ * @example
+ *
+ * import {
+ *   registerCloudBpmnJSPlugin
+ * } from 'camunda-modeler-plugin-helpers';
+ *
+ * const BpmnJSModule = {
+ *   __init__: [ 'myService' ],
+ *   myService: [ 'type', ... ]
+ * };
+ *
+ * registerCloudBpmnJSPlugin(BpmnJSModule);
+ */
+function registerCloudBpmnJSPlugin(module) {
+  registerClientPlugin(module, 'bpmn.cloud.modeler.additionalModules');
 }
 
 /**
@@ -124,6 +190,106 @@ function registerBpmnJSPlugin(module) {
  */
 function registerBpmnJSModdleExtension(descriptor) {
   registerClientPlugin(descriptor, 'bpmn.modeler.moddleExtension');
+}
+
+/**
+ * Validate and register a platform specific bpmn-moddle extension plugin.
+ *
+ * @param {Object} descriptor
+ *
+ * @example
+ * import {
+ *   registerPlatformBpmnJSModdleExtension
+ * } from 'camunda-modeler-plugin-helpers';
+ *
+ * var moddleDescriptor = {
+ *   name: 'my descriptor',
+ *   uri: 'http://example.my.company.localhost/schema/my-descriptor/1.0',
+ *   prefix: 'mydesc',
+ *
+ *   ...
+ * };
+ *
+ * registerPlatformBpmnJSModdleExtension(moddleDescriptor);
+ */
+function registerPlatformBpmnJSModdleExtension(descriptor) {
+  registerClientPlugin(descriptor, 'bpmn.platform.modeler.moddleExtension');
+}
+
+/**
+ * Validate and register a cloud specific bpmn-moddle extension plugin.
+ *
+ * @param {Object} descriptor
+ *
+ * @example
+ * import {
+ *   registerCloudBpmnJSModdleExtension
+ * } from 'camunda-modeler-plugin-helpers';
+ *
+ * var moddleDescriptor = {
+ *   name: 'my descriptor',
+ *   uri: 'http://example.my.company.localhost/schema/my-descriptor/1.0',
+ *   prefix: 'mydesc',
+ *
+ *   ...
+ * };
+ *
+ * registerCloudBpmnJSModdleExtension(moddleDescriptor);
+ */
+function registerCloudBpmnJSModdleExtension(descriptor) {
+  registerClientPlugin(descriptor, 'bpmn.cloud.modeler.moddleExtension');
+}
+
+/**
+ * Validate and register a dmn-moddle extension plugin.
+ *
+ * @param {Object} descriptor
+ *
+ * @example
+ * import {
+ *   registerDmnJSModdleExtension
+ * } from 'camunda-modeler-plugin-helpers';
+ *
+ * var moddleDescriptor = {
+ *   name: 'my descriptor',
+ *   uri: 'http://example.my.company.localhost/schema/my-descriptor/1.0',
+ *   prefix: 'mydesc',
+ *
+ *   ...
+ * };
+ *
+ * registerDmnJSModdleExtension(moddleDescriptor);
+ */
+function registerDmnJSModdleExtension(descriptor) {
+  registerClientPlugin(descriptor, 'dmn.modeler.moddleExtension');
+}
+
+/**
+ * Validate and register a dmn-js plugin.
+ *
+ * @param {Object} module
+ *
+ * @example
+ *
+ * import {
+ *   registerDmnJSPlugin
+ * } from 'camunda-modeler-plugin-helpers';
+ *
+ * const DmnJSModule = {
+ *   __init__: [ 'myService' ],
+ *   myService: [ 'type', ... ]
+ * };
+ *
+ * registerDmnJSPlugin(DmnJSModule, [ 'drd', 'literalExpression' ]);
+ * registerDmnJSPlugin(DmnJSModule, 'drd')
+ */
+function registerDmnJSPlugin(module, components) {
+
+  if (!Array.isArray(components)) {
+    components = [ components ]
+  }
+
+  components.forEach(c => registerClientPlugin(module, `dmn.modeler.${c}.additionalModules`)); 
 }
 
 /**
@@ -1371,7 +1537,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__.registerBpmnJSPlugin)(_module__WEBPACK_IMPORTED_MODULE_1__.default);
+(0,camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__.registerPlatformBpmnJSPlugin)(_module__WEBPACK_IMPORTED_MODULE_1__.default);
 
 })();
 

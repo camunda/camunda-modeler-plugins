@@ -51,7 +51,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 
 ## Additional Resources
 
-* [Plugins documentation](https://github.com/camunda/camunda-modeler/tree/master/docs/plugins)
+* [Plugins documentation](https://docs.camunda.io/docs/components/modeler/desktop-modeler/plugins/)
 * [Plugin Starter Project](https://github.com/camunda/camunda-modeler-plugin-example)
 
 

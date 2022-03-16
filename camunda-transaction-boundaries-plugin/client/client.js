@@ -1,7 +1,7 @@
 import {
-  registerBpmnJSPlugin
+  registerPlatformBpmnJSPlugin
 } from 'camunda-modeler-plugin-helpers';
 
 import module from './module';
 
-registerBpmnJSPlugin(module);
+registerPlatformBpmnJSPlugin(module);
