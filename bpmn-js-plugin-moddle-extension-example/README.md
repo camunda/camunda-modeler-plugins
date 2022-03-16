@@ -1,4 +1,5 @@
 # Camunda Modeler bpmn-js Moddle Extension Plugin Example
+[![Compatible with Camunda Modeler version 2.2+](https://img.shields.io/badge/Modeler_Version-2.2+-blue.svg)](#) [![Plugin Type](https://img.shields.io/badge/Plugin_Type-BPMN_Moddle-orange.svg)](#)
 
 [![Compatible with Camunda Modeler version 2.2+](https://img.shields.io/badge/Modeler_Version-2.2+-blue.svg)](#) [![Plugin Type](https://img.shields.io/badge/Plugin_Type-BPMN_Moddle-orange.svg)](#)
 
