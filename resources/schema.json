@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://camunda.org/schema/camunda-modeler-plugins-registry/1.0",
+  "title": "Camunda Modeler Plugins Registry JSON Schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "$id": "#/version",
+      "type": "string",
+      "description": "The version of the plugin registry file."
+    },
+    "plugins": {
+      "$id": "#/plugins",
+      "type": "array",
+      "description": "The plugins.",
+      "items": {
+        "$id": "#/plugins/plugin",
+        "type": "object",
+        "default": [],
+        "required": [
+          "id",
+          "url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$id": "#/plugins/plugin/id",
+            "type": "string",
+            "description": "The identifier of a plugin."
+          },
+          "displayName": {
+            "$id": "#/plugins/plugin/displayName",
+            "type": "string",
+            "description": "The displayed name of a plugin."
+          },
+          "version": {
+            "$id": "#/plugins/plugin/version",
+            "type": "string",
+            "description": "The latest version of a plugin."
+          },
+          "description": {
+            "$id": "#/plugins/plugin/description",
+            "type": "string",
+            "description": "The description of a plugin."
+          },
+          "url": {
+            "$id": "#/plugins/plugin/url",
+            "type": "string",
+            "description": "The installation URL of a plugin.",
+            "pattern": "^(https|http)://.*"
+          },
+          "category": {
+            "$id": "#/plugins/plugin/category",
+            "type": "string",
+            "description": "The category of a plugin.",
+            "enum": [
+              "General",
+              "BPMN",
+              "DMN"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
