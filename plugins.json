@@ -1,0 +1,174 @@
+{
+  "$schema": "https://raw.githubusercontent.com/camunda/camunda-modeler-plugins/master/resources/schema.json",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "id": "menu-plugin-example",
+      "displayName": "Camunda Modeler Menu Plugin Example",
+      "version": "0.1.0",
+      "description": "Menu Plugin Example for the Camunda Modeler",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/menu-plugin-example",
+      "category": "General"
+    },
+    {
+      "id": "camunda-modeler-style-plugin-example",
+      "displayName": "Camunda Modeler Style Plugin Example",
+      "version": "0.1.0",
+      "description": "Style Plugin Example for the Camunda Modeler",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/style-plugin-example",
+      "category": "General"
+    },
+    {
+      "id": "camunda-modeler-autosave-plugin",
+      "displayName": "camunda-modeler-autosave-plugin",
+      "version": "0.3.1",
+      "description": "Automatically save your diagrams modeled in Camunda Modeler",
+      "url": "https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin",
+      "category": "General"
+    },
+    {
+      "id": "camunda-modeler-i18n-plugin",
+      "displayName": "Camunda Modeler I18N-Plugin",
+      "version": "1.1.0",
+      "description": "This plugin for the Camunda Modeler allows to translate the strings used in the UI. It contains German, English and Portuguese and can easily be extended and customized.",
+      "url": "https://github.com/FlowSquad/camunda-modeler-i18n-plugin",
+      "category": "General"
+    },
+    {
+      "id": "camunda-modeler-plugin-multidiagram",
+      "displayName": "Camunda Modeler Multi-Diagram plug-in",
+      "version": "1.0.1",
+      "description": "Camunda Modeler Multi-Diagram plug-in",
+      "url": "https://github.com/sharedchains/camunda-modeler-plugin-multidiagram",
+      "category": "General"
+    },
+    {
+      "id": "camunda-modeler-bpmn-js-plugin-example",
+      "displayName": "Camunda Modeler bpmn-js Plugin Example",
+      "version": "0.2.0",
+      "description": "bpmn-js Plugin Example for the Camunda Modeler",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/bpmn-js-plugin-example",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-bpmn-js-embedded-comments",
+      "displayName": "BPMN Embedded Comments Plugin",
+      "version": "0.2.0",
+      "description": "bpmn-js Embedded Comments Plugin for the Camunda Modele",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/bpmn-js-plugin-embedded-comments",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-token-simulation-plugin",
+      "displayName": "Token Simulation for the Camunda Modeler",
+      "version": "0.16.0",
+      "description": "Token simulation as a plugin for the Camunda Modeler",
+      "url": "https://github.com/camunda/camunda-modeler-token-simulation-plugin",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-transaction-boundaries-plugin",
+      "displayName": "Camunda Transaction Boundaries Plugin",
+      "version": "0.5.0",
+      "description": "Camunda Transaction Boundaries Plugin for the Camunda Modeler",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/camunda-transaction-boundaries-plugin",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-plugin-resize-tasks",
+      "displayName": "Camunda Modeler Plugin: Resize Tasks",
+      "version": "0.1.0",
+      "description": "Camunda Modeler Plugin That Makes Tasks Resizable",
+      "url": "https://github.com/philippfromme/camunda-modeler-plugin-resize-tasks",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-bpmn-js-plugin-color-picker",
+      "displayName": "BPMN ColorPicker Plugin",
+      "version": "0.1.0",
+      "description": "bpmn-js Color Picker Plugin for the Camunda Modeler",
+      "url": "https://github.com/camunda-community-hub/camunda-modeler-plugin-color-picker",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-plugin-usertask-generatedform-preview",
+      "displayName": "Camunda Modeler Plugin - UserTask Generated Form Preview and Embedded Form Generator",
+      "version": "0.4.0",
+      "description": "Camunda Modeler Plugin that helps you preview generated forms in user tasks and shows you the sourcecode you need for embedded forms in the Camunda Tasklist.",
+      "url": "https://github.com/camunda-community-hub/camunda-modeler-plugin-usertask-generatedform-preview",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-linter-plugin",
+      "displayName": "camunda-modeler-linter-plugin",
+      "version": "0.6.0",
+      "description": "Check your BPMN diagrams for common issues",
+      "url": "https://github.com/camunda/camunda-modeler-linter-plugin",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-process-io-specification-plugin",
+      "displayName": "Camunda Modeler Process I/O Specification Plug-in",
+      "version": "0.3.0",
+      "description": "A plug-in that allows you to document input and output specifications for your BPMN processes.",
+      "url": "https://github.com/camunda/camunda-modeler-process-io-specification-plugin",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-property-info-plugin",
+      "displayName": "Camunda Modeler Property Info Plugin",
+      "version": "0.0.1",
+      "description": "This plugin serves a better overview which properties are set per shape.",
+      "url": "https://github.com/umb/camunda-modeler-property-info-plugin",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-bpmn-js-plugin-reduced-palette",
+      "displayName": "Camunda Modeler - Reduce Palette",
+      "version": "0.1.0",
+      "description": "bpmn-js Reduced Palette Plugin for the Camunda Modeler",
+      "url": "https://github.com/camunda-community-hub/camunda-modeler-plugin-reduced-palette",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-bpmn-js-plugin-rename-technical-ids",
+      "displayName": "Camunda Modeler - Rename Technical IDs",
+      "version": "0.1.0",
+      "description": "bpmn-js Rename Technical IDs for the Camunda Modeler",
+      "url": "https://github.com/camunda-community-hub/camunda-modeler-plugin-rename-technical-ids",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-tooltip-plugin",
+      "displayName": "camunda-modeler-tooltip-plugin",
+      "version": "0.0.8",
+      "description": "Add tooltips to various BPMN-elements revealing technical properties.",
+      "url": "https://github.com/viadee/camunda-modeler-tooltip-plugin",
+      "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-dmn-js-plugin-example",
+      "displayName": "Camunda Modeler dmn-js Plugin Example",
+      "version": "0.1.0",
+      "description": "dmn-js Plugin Example for the Camunda Modeler",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/dmn-js-plugin-example",
+      "category": "DMN"
+    },
+    {
+      "id": "dmn-testing-plugin",
+      "displayName": "dmn-testing-plugin",
+      "version": "0.1.0",
+      "description": "Camunda Modeler plugin that allows testing of a DMN decision.",
+      "url": "https://github.com/bpmn-io/dmn-testing-plugin",
+      "category": "DMN"
+    },
+    {
+      "id": "camunda-modeler-excel-import-plugin",
+      "displayName": "camunda-modeler-excel-import-plugin",
+      "version": "1.3.1",
+      "description": "Camunda Modeler plugin to import Excel Sheets to DMN 1.3 Decision Tables (and vice versa).",
+      "url": "https://github.com/pinussilvestrus/camunda-modeler-excel-import-plugin",
+      "category": "DMN"
+    }
+  ]
+}
