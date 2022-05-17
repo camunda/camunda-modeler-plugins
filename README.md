@@ -13,7 +13,7 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 
 * [bpmn-js Plugin Example](./bpmn-js-plugin-example) - An example of how to create a bpmn-js plugin.
 * [Embedded Comments Plugin](./bpmn-js-plugin-embedded-comments) - [bpmn-js Embedded Comments](https://github.com/bpmn-io/bpmn-js-embedded-comments) as a Camunda Modeler plugin.
-* [Token Simulation Plugin](https://github.com/bpmn-io/bpmn-js-token-simulation-plugin) - [bpmn-js-token-simulation](https://github.com/bpmn-io/bpmn-js-token-simulation) as a Camunda Modeler plugin.
+* [Token Simulation Plugin](https://github.com/camunda/camunda-modeler-token-simulation-plugin) - [bpmn-js-token-simulation](https://github.com/bpmn-io/bpmn-js-token-simulation) as a Camunda Modeler plugin.
 * [Transaction Boundaries Plugin](./camunda-transaction-boundaries-plugin) - [camunda-transaction-boundaries](https://github.com/bpmn-io/camunda-transaction-boundaries) as a Camunda Modeler plugin.
 
 ### dmn-js
