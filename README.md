@@ -3,7 +3,11 @@
 
 # Camunda Modeler Plugins :electric_plug:
 
-This repository contains a number of plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler).
+[![Build Status](https://img.shields.io/github/workflow/status/camunda/camunda-modeler-plugins/CI)](https://github.com/camunda/camunda-modeler-plugins/actions?query=workflow%3ACI)
+
+This repository contains a number of plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler). You can also find it in an accessible and structured manner via the [`plugins.json`](./plugins.json) file.
+
+Checkout our [contribution guidelines](#contribute) to add more plugins to the list.
 
 ### General
 
@@ -48,6 +52,23 @@ This repository contains a number of plugins for the [Camunda Modeler](https://g
 
 * [DMN Testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A Camunda Modeler plugin to test your DMN decision tables and decision graphs using an embedded Camunda decision engine.
 * [Excel Import Plugin](https://github.com/pinussilvestrus/camunda-modeler-excel-import-plugin) - Camunda Modeler Plugin to import Excel Sheets to DMN Tables.
+
+## Contribute
+
+Would you like to contribute to this list? [Propose your addition](https://github.com/camunda/camunda-modeler/edit/master/README.md) by editing the plugins list.
+
+Add your plugin to the [`plugins.json`](./plugins.json) to make it accessible in a structured manner.
+
+```json
+ {
+  "id": "my-plugin",
+  "displayName": "Example Plugin",
+  "version": "0.1.0",
+  "description": "A Camunda Modeler example plugin",
+  "url": "https://github.com/example/camunda-modeler-example-plugin",
+  "category": "General"
+}
+```
 
 ## Additional Resources
 
