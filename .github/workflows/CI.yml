@@ -29,4 +29,4 @@ jobs:
     - name: Install ajv-cli
       run: npm -g i ajv-cli
     - name: Validate Plugins JSON File
-      run: ajv test -s resources/schema.json -d plugins.json --errors=text --valid
+      run: ajv test -s resources/plugins-schema.json -d plugins.json --errors=text --valid
