@@ -43,6 +43,14 @@
       "category": "General"
     },
     {
+      "id": "camunda-modeler-script-box-height-plugin",
+      "displayName": "Camunda Modeler Script Box Height Plugin",
+      "version": "0.1.0",
+      "description": "Camunda Modeler Script Box Height Plugin",
+      "url": "https://github.com/shepda/camunda-modeler-script-box-height-plugin",
+      "category": "General"
+    },
+    {
       "id": "camunda-modeler-bpmn-js-plugin-example",
       "displayName": "Camunda Modeler bpmn-js Plugin Example",
       "version": "0.2.0",
