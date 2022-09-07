@@ -35,6 +35,7 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Autosave Plugin](https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin) - A Camunda Modeler plugin that automatically saves your diagrams.
 * [Internationalization Plugin](https://github.com/FlowSquad/camunda-modeler-i18n-plugin) - A Camunda Modeler Plugin that allows you to translate the UI.
 * [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A Camunda Modeler plugin that allows to manage multiple diagrams on a single BPMN file.
+* [Camunda Modeler Script Box Height Plugin](https://github.com/shepda/camunda-modeler-script-box-height-plugin) - A Camunda Modeler plugin that increases the height of the script box.
 
 ### bpmn-js
 
