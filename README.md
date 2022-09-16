@@ -36,6 +36,7 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Internationalization Plugin](https://github.com/FlowSquad/camunda-modeler-i18n-plugin) - A Camunda Modeler Plugin that allows you to translate the UI.
 * [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A Camunda Modeler plugin that allows to manage multiple diagrams on a single BPMN file.
 * [Camunda Modeler Script Box Height Plugin](https://github.com/shepda/camunda-modeler-script-box-height-plugin) - A Camunda Modeler plugin that increases the height of the script box.
+* [Dracula Theme Plugin](https://github.com/hlucasfranca/camunda-modeler-plugin-dracula) - A Camunda Modeler plugin which enables a dark theme inspired by [dracula’s](https://draculatheme.com) color theme
 
 ### bpmn-js
 
