@@ -43,7 +43,7 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [bpmn-js Resize Tasks Plugin](https://github.com/philippfromme/camunda-modeler-plugin-resize-tasks) - A Camunda Modeler plugin that makes tasks resizable in bpmn-js.
 * [Color Picker](https://github.com/camunda-community-hub/camunda-modeler-plugin-color-picker) - A color picker plugin that lets you choose any color for your BPMN elements.
 * [Generated Form Preview](https://github.com/camunda-community-hub/camunda-modeler-plugin-usertask-generatedform-preview) - A plugin that allows  you to preview forms in the Camunda Modeler.
-* [Linter Plugin](https://github.com/camunda/camunda-modeler-linter-plugin) - A Camunda Modeler (<= 5.3) plugin to validate your BPMN diagrams using configurable linting rules.
+* [Custom Linter Rules Plugin](https://github.com/camunda/camunda-modeler-custom-linter-rules-plugin) - A Camunda Modeler plugin to contribute custom (BPMN) lint rules to the editor.
 * [Process I/O Specification](https://github.com/camunda/camunda-modeler-process-io-specification-plugin) - A plugin that allows you to document your process input and output specifications.
 * [Property Info Plugin](https://github.com/umb/camunda-modeler-property-info-plugin) - Visualizes technical attributes like execution listeners, I/O mappings, field injections and extensions.
 * [Reduced Palette](https://github.com/camunda-community-hub/camunda-modeler-plugin-reduced-palette) - A plugin that reduces the number of available entries in the palette and the context menu.
