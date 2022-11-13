@@ -26,6 +26,6 @@
     "bpmn-js-embedded-comments": "^0.6.1",
     "camunda-modeler-plugin-helpers": "^5.0.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   }
 }
