@@ -3,7 +3,7 @@
 
 # Camunda Modeler Plugins :electric_plug:
 
-[![Build Status](https://img.shields.io/github/workflow/status/camunda/camunda-modeler-plugins/CI)](https://github.com/camunda/camunda-modeler-plugins/actions?query=workflow%3ACI)
+[![CI](https://github.com/camunda/camunda-modeler-plugins/actions/workflows/CI.yml/badge.svg)](https://github.com/camunda/camunda-modeler-plugins/actions/workflows/CI.yml)
 
 This repository contains a number of plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler). You can also find it in an accessible and structured manner via the [`plugins.json`](./plugins.json) file.
 
