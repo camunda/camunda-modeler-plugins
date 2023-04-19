@@ -57,7 +57,7 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 
 ### Linter Rules
 
-* [Default Linter Rules Plugin](https://github.com/jonathanlukas/camunda-modeler-linter-default-rules) - A Camunda Modeler Linter Rules Plugin that activates the default linter rules from former linter plugin versions.
+* [Default Linter Rules Plugin](https://github.com/jonathanlukas/camunda-modeler-linter-default-rules) - A Camunda Modeler plugin that contributes the default linter rules (formerly provided through the linter plug-in).
 
 ## Contribute
 
