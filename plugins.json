@@ -180,7 +180,7 @@
     },
     {
       "id": "camunda-modeler-linter-default-rules",
-      "displayName": "Default Rules Plugin",
+      "displayName": "Default Linter Rules Plugin",
       "version": "0.0.0",
       "description": "Activates the default BPMN linter rules (formerly provided through the linter plugin)",
       "url": "https://github.com/jonathanlukas/camunda-modeler-linter-default-rules",
