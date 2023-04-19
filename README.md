@@ -55,6 +55,10 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [DMN Testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A Camunda Modeler plugin to test your DMN decision tables and decision graphs using an embedded Camunda decision engine.
 * [Excel Import Plugin](https://github.com/pinussilvestrus/camunda-modeler-excel-import-plugin) - Camunda Modeler Plugin to import Excel Sheets to DMN Tables.
 
+### Linter
+
+* [Default Linter Rules Plugin](https://github.com/jonathanlukas/camunda-modeler-linter-default-rules) - A Camunda Modeler Linter Rules Plugin that activates the default linter rules from former linter plugin versions.
+
 ## Contribute
 
 Would you like to contribute to this list? [Propose your addition](https://github.com/camunda/camunda-modeler/edit/master/README.md) by editing the plugins list.
