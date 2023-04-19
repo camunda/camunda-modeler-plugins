@@ -177,6 +177,14 @@
       "description": "Camunda Modeler plugin to import Excel Sheets to DMN 1.3 Decision Tables (and vice versa).",
       "url": "https://github.com/pinussilvestrus/camunda-modeler-excel-import-plugin",
       "category": "DMN"
+    },
+    {
+      "id": "camunda-modeler-linter-default-rules",
+      "displayName": "Default Rules Plugin",
+      "version": "0.0.0",
+      "description": "A Camunda Modeler linter rules plugin that activates the default linter rules from former linter plugin versions",
+      "url": "https://github.com/jonathanlukas/camunda-modeler-linter-default-rules",
+      "category": "BPMN"
     }
   ]
 }
