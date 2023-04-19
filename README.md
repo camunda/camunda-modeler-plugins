@@ -32,17 +32,17 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 
 ### General
 
-* [Autosave Plugin](https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin) - A Camunda Modeler plugin that automatically saves your diagrams.
-* [Internationalization Plugin](https://github.com/FlowSquad/camunda-modeler-i18n-plugin) - A Camunda Modeler Plugin that allows you to translate the UI.
-* [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A Camunda Modeler plugin that allows to manage multiple diagrams on a single BPMN file.
-* [Camunda Modeler Script Box Height Plugin](https://github.com/shepda/camunda-modeler-script-box-height-plugin) - A Camunda Modeler plugin that increases the height of the script box.
-* [Dracula Theme Plugin](https://github.com/hlucasfranca/camunda-modeler-plugin-dracula) - A Camunda Modeler plugin which enables a dark theme inspired by [dracula’s](https://draculatheme.com) color theme
+* [Autosave Plugin](https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin) - A plugin that automatically saves your diagrams.
+* [Internationalization Plugin](https://github.com/FlowSquad/camunda-modeler-i18n-plugin) - A plugin that allows you to translate the UI.
+* [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A plugin that allows to manage multiple diagrams on a single BPMN file.
+* [Script Box Height Plugin](https://github.com/shepda/camunda-modeler-script-box-height-plugin) - A plugin that increases the height of the script box.
+* [Dracula Theme Plugin](https://github.com/hlucasfranca/camunda-modeler-plugin-dracula) - A plugin which enables a dark theme inspired by [dracula’s](https://draculatheme.com) color theme
 
 ### bpmn-js
 
-* [bpmn-js Resize Tasks Plugin](https://github.com/philippfromme/camunda-modeler-plugin-resize-tasks) - A Camunda Modeler plugin that makes tasks resizable in bpmn-js.
+* [bpmn-js Resize Tasks Plugin](https://github.com/philippfromme/camunda-modeler-plugin-resize-tasks) - A plugin that makes tasks resizable in bpmn-js.
 * [Color Picker](https://github.com/camunda-community-hub/camunda-modeler-plugin-color-picker) - A color picker plugin that lets you choose any color for your BPMN elements.
-* [Generated Form Preview](https://github.com/camunda-community-hub/camunda-modeler-plugin-usertask-generatedform-preview) - A plugin that allows  you to preview forms in the Camunda Modeler.
+* [Generated Form Preview](https://github.com/camunda-community-hub/camunda-modeler-plugin-usertask-generatedform-preview) - A plugin that allows you to preview forms.
 * [Process I/O Specification](https://github.com/camunda/camunda-modeler-process-io-specification-plugin) - A plugin that allows you to document your process input and output specifications.
 * [Property Info Plugin](https://github.com/umb/camunda-modeler-property-info-plugin) - Visualizes technical attributes like execution listeners, I/O mappings, field injections and extensions.
 * [Reduced Palette](https://github.com/camunda-community-hub/camunda-modeler-plugin-reduced-palette) - A plugin that reduces the number of available entries in the palette and the context menu.
@@ -51,13 +51,13 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 
 ### dmn-js
 
-* [DMN Testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A Camunda Modeler plugin to test your DMN decision tables and decision graphs using an embedded Camunda decision engine.
-* [Excel Import Plugin](https://github.com/pinussilvestrus/camunda-modeler-excel-import-plugin) - Camunda Modeler Plugin to import Excel Sheets to DMN Tables.
+* [DMN Testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A plugin to test your DMN decision tables and decision graphs using an embedded Camunda decision engine.
+* [Excel Import Plugin](https://github.com/pinussilvestrus/camunda-modeler-excel-import-plugin) - A plugin to import Excel Sheets to DMN Tables.
 
 ### Linter Rules
 
-* [Default Linter Rules Plugin](https://github.com/jonathanlukas/camunda-modeler-linter-default-rules) - A Camunda Modeler plugin that contributes the default linter rules (formerly provided through the linter plug-in).
-* [Custom Linter Rules Plugin](https://github.com/camunda/camunda-modeler-custom-linter-rules-plugin) - A Camunda Modeler plugin to contribute custom (BPMN) lint rules to the editor.
+* [Default Linter Rules Plugin](https://github.com/jonathanlukas/camunda-modeler-linter-default-rules) - A plugin that contributes the default linter rules (formerly provided through the linter plugin).
+* [Custom Linter Rules Plugin](https://github.com/camunda/camunda-modeler-custom-linter-rules-plugin) - A plugin to contribute custom (BPMN) lint rules to the editor.
 
 ## Contribute
 
