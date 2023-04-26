@@ -44,7 +44,6 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Color Picker](https://github.com/camunda-community-hub/camunda-modeler-plugin-color-picker) - A color picker plugin that lets you choose any color for your BPMN elements.
 * [Generated Form Preview](https://github.com/camunda-community-hub/camunda-modeler-plugin-usertask-generatedform-preview) - A plugin that allows you to preview forms.
 * [Process I/O Specification](https://github.com/camunda/camunda-modeler-process-io-specification-plugin) - A plugin that allows you to document your process input and output specifications.
-* [Property Info Plugin](https://github.com/umb/camunda-modeler-property-info-plugin) - Visualizes technical attributes like execution listeners, I/O mappings, field injections and extensions.
 * [Reduced Palette](https://github.com/camunda-community-hub/camunda-modeler-plugin-reduced-palette) - A plugin that reduces the number of available entries in the palette and the context menu.
 * [Technical ID Generator](https://github.com/camunda-community-hub/camunda-modeler-plugin-rename-technical-ids) - A plugin that generates technical IDs for BPMN elements according to best practices.
 * [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - Adds tooltips to various BPMN elements revealing hidden properties and conditional flows.
