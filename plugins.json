@@ -155,6 +155,14 @@
       "category": "BPMN"
     },
     {
+      "id": "camunda-modeler-data-outline-plugin",
+      "displayName": "Camunda Modeler Data Outline Plugin",
+      "version": "0.0.1",
+      "description": "Adds a tree-view for variables in Camunda 8 to the bottom panel.",
+      "url": "https://github.com/marstamm/camunda-modeler-data-outline-plugin",
+      "category": "BPMN"
+    },
+    {
       "id": "camunda-modeler-dmn-js-plugin-example",
       "displayName": "Camunda Modeler dmn-js Plugin Example",
       "version": "0.1.0",
