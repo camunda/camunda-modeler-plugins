@@ -62,7 +62,7 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 
 ## Contribute
 
-Would you like to contribute to this list? [Propose your addition](https://github.com/camunda/camunda-modeler/edit/master/README.md) by editing the plugins list.
+Would you like to contribute to this list? [Propose your addition](https://github.com/camunda/camunda-modeler-plugins/edit/main/README.md) by editing the plugins list.
 
 Add your plugin to the [`plugins.json`](./plugins.json) to make it accessible in a structured manner.
 
