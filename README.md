@@ -1,4 +1,4 @@
-> Looking for a starting point to create you own plugin? Checkout our [plugin starter project](https://github.com/camunda/camunda-modeler-plugin-example) or consult the [plugins documentation](https://github.com/camunda/camunda-modeler/tree/master/docs/plugins).
+> Looking for a starting point to create you own plugin? Checkout our [plugin starter project](https://github.com/camunda/camunda-modeler-plugin-example) or consult the [plugins documentation](https://docs.camunda.io/docs/components/modeler/desktop-modeler/plugins/).
 
 
 # Camunda Modeler Plugins :electric_plug:
