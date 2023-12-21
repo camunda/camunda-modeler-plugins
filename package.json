@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "test": "echo \"No tests\""
+    "all": "npm test",
+    "test": "npm run validate-plugins",
+    "validate-plugins": "ajv test -s resources/plugins-schema.json -d plugins.json --errors=text --valid"
+  },
+  "devDependencies": {
+    "ajv-cli": "^5.0.0"
   }
 }
