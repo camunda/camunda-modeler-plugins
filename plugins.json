@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/camunda/camunda-modeler-plugins/master/resources/plugins-schema.json",
+  "$schema": "https://raw.githubusercontent.com/camunda/camunda-modeler-plugins/main/resources/plugins-schema.json",
   "version": "0.1.0",
   "plugins": [
     {
@@ -7,7 +7,7 @@
       "displayName": "Camunda Modeler Menu Plugin Example",
       "version": "0.1.0",
       "description": "Menu Plugin Example for the Camunda Modeler",
-      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/menu-plugin-example",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/main/menu-plugin-example",
       "category": "General"
     },
     {
@@ -15,7 +15,7 @@
       "displayName": "Camunda Modeler Style Plugin Example",
       "version": "0.1.0",
       "description": "Style Plugin Example for the Camunda Modeler",
-      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/style-plugin-example",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/main/style-plugin-example",
       "category": "General"
     },
     {
@@ -55,7 +55,7 @@
       "displayName": "Camunda Modeler bpmn-js Plugin Example",
       "version": "0.2.0",
       "description": "bpmn-js Plugin Example for the Camunda Modeler",
-      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/bpmn-js-plugin-example",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/main/bpmn-js-plugin-example",
       "category": "BPMN"
     },
     {
@@ -63,7 +63,7 @@
       "displayName": "BPMN Embedded Comments Plugin",
       "version": "0.2.0",
       "description": "bpmn-js Embedded Comments Plugin for the Camunda Modele",
-      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/bpmn-js-plugin-embedded-comments",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/main/bpmn-js-plugin-embedded-comments",
       "category": "BPMN"
     },
     {
@@ -79,7 +79,7 @@
       "displayName": "Camunda Transaction Boundaries Plugin",
       "version": "0.5.0",
       "description": "Camunda Transaction Boundaries Plugin for the Camunda Modeler",
-      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/camunda-transaction-boundaries-plugin",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/main/camunda-transaction-boundaries-plugin",
       "category": "BPMN"
     },
     {
@@ -167,7 +167,7 @@
       "displayName": "Camunda Modeler dmn-js Plugin Example",
       "version": "0.1.0",
       "description": "dmn-js Plugin Example for the Camunda Modeler",
-      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/master/dmn-js-plugin-example",
+      "url": "https://github.com/camunda/camunda-modeler-plugins/tree/main/dmn-js-plugin-example",
       "category": "DMN"
     },
     {
