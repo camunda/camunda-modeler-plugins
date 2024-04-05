@@ -48,6 +48,8 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Technical ID Generator](https://github.com/camunda-community-hub/camunda-modeler-plugin-rename-technical-ids) - A plugin that generates technical IDs for BPMN elements according to best practices.
 * [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - Adds tooltips to various BPMN elements revealing hidden properties and conditional flows.
 * [Data Outline Plugin](https://github.com/camunda/camunda-modeler-data-outline-plugin) - Adds a tree-view for variables in Camunda 8 to the bottom panel.
+* [Property Info Plugin](https://github.com/mesoneer-ag/camunda-modeler-property-info-plugin) - Shows different properties of BPMN elements as overlay.
+
 
 
 ### dmn-js
