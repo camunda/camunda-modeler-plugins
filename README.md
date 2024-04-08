@@ -51,7 +51,6 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Property Info Plugin](https://github.com/mesoneer-ag/camunda-modeler-property-info-plugin) - Shows different properties of BPMN elements as overlay.
 
 
-
 ### dmn-js
 
 * [DMN Testing Plugin](https://github.com/bpmn-io/dmn-testing-plugin) - A plugin to test your DMN decision tables and decision graphs using an embedded Camunda decision engine.
