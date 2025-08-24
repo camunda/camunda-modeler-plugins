@@ -193,6 +193,14 @@
       "description": "Activates the default BPMN linter rules (formerly provided through the linter plugin)",
       "url": "https://github.com/jonathanlukas/camunda-modeler-linter-default-rules",
       "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-plugin-rich-documentation-editor",
+      "displayName": "Rich Documentation Editor",
+      "version": "0.1.0",
+      "description": "A plugin for the Camunda Modeler that adds a rich text editor for element documentation.",
+      "url": "https://github.com/OnnoH/camunda-modeler-plugin-rich-documentation-editor",
+      "category": "BPMN"
     }
   ]
 }
