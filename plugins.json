@@ -201,6 +201,14 @@
       "description": "A plugin for the Camunda Modeler that adds a rich text editor for element documentation.",
       "url": "https://github.com/OnnoH/camunda-modeler-plugin-rich-documentation-editor",
       "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-plugin-enhanced-color-picker",
+      "displayName": "Enhanced Color Picker",
+      "version": "1.0.0",
+      "description": "A plugin for the Camunda Modeler that adds a flexible color picker to the toolbar, allowing you to easily apply preset colors to your BPMN elements.",
+      "url": "https://github.com/kommitters/camunda-modeler-plugin-enhanced-color-picker",
+      "category": "BPMN"
     }
   ]
 }
