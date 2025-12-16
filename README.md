@@ -49,6 +49,7 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - Adds tooltips to various BPMN elements revealing hidden properties and conditional flows.
 * [Data Outline Plugin](https://github.com/camunda/camunda-modeler-data-outline-plugin) - Adds a tree-view for variables in Camunda 8 to the bottom panel.
 * [Property Info Plugin](https://github.com/mesoneer-ag/camunda-modeler-property-info-plugin) - Shows different properties of BPMN elements as overlay.
+* [Enhanced Color Picker](https://github.com/kommitters/camunda-modeler-plugin-enhanced-color-picker) - A plugin for the Camunda Modeler that adds a flexible color picker to the toolbar, allowing you to easily apply preset colors to your BPMN elements.
 
 
 ### dmn-js
