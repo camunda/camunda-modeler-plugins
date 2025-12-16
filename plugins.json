@@ -205,7 +205,7 @@
     {
       "id": "camunda-modeler-plugin-enhanced-color-picker",
       "displayName": "Enhanced Color Picker",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "description": "A plugin for the Camunda Modeler that adds a flexible color picker to the toolbar, allowing you to easily apply preset colors to your BPMN elements.",
       "url": "https://github.com/kommitters/camunda-modeler-plugin-enhanced-color-picker",
       "category": "BPMN"
