@@ -37,6 +37,7 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A plugin that allows to manage multiple diagrams on a single BPMN file.
 * [Script Box Height Plugin](https://github.com/shepda/camunda-modeler-script-box-height-plugin) - A plugin that increases the height of the script box.
 * [Dracula Theme Plugin](https://github.com/hlucasfranca/camunda-modeler-plugin-dracula) - A plugin which enables a dark theme inspired by [dracula’s](https://draculatheme.com) color theme
+* [Navigator Plugin](https://github.com/momennemrat/camunda-navigator) - A plugin to navigate complex BPMN/DMN projects with ease using keyboard shortcut and global search.
 
 ### bpmn-js
 
