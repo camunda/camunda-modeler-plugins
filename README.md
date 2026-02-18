@@ -1,13 +1,17 @@
-> Looking for a starting point to create you own plugin? Checkout our [plugin starter project](https://github.com/camunda/camunda-modeler-plugin-example) or consult the [plugins documentation](https://docs.camunda.io/docs/components/modeler/desktop-modeler/plugins/).
-
-
 # Camunda Modeler Plugins :electric_plug:
 
 [![CI](https://github.com/camunda/camunda-modeler-plugins/actions/workflows/CI.yml/badge.svg)](https://github.com/camunda/camunda-modeler-plugins/actions/workflows/CI.yml)
 
-This repository contains a number of plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler). You can also find it in an accessible and structured manner via the [`plugins.json`](./plugins.json) file.
+A list of community-maintained plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler). 
 
-Checkout our [contribution guidelines](#contribute) to add more plugins to the list.
+You can find the plugins below in an accessible, structured format in the [`plugins.json`](./plugins.json) file. 
+
+> [!NOTE]
+> Looking for a starting point to create your own plugin? Check out our [plugin starter project](https://github.com/camunda/camunda-modeler-plugin-example) or consult the [plugins documentation](https://docs.camunda.io/docs/components/modeler/desktop-modeler/plugins/).
+>
+> Check out our [contribution guidelines](#contribute) to add more plugins to the list.
+
+## Local Examples
 
 ### General
 
@@ -17,7 +21,6 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 
 * [bpmn-js Plugin Example](./bpmn-js-plugin-example) - An example of how to create a bpmn-js plugin.
 * [Embedded Comments Plugin](./bpmn-js-plugin-embedded-comments) - A plugin based off [bpmn-js-embedded-comments](https://github.com/bpmn-io/bpmn-js-embedded-comments).
-* [Token Simulation Plugin](https://github.com/camunda/camunda-modeler-token-simulation-plugin) - A plugin based off [bpmn-js-token-simulation](https://github.com/bpmn-io/bpmn-js-token-simulation).
 * [Transaction Boundaries Plugin](./camunda-transaction-boundaries-plugin) - A plugin based off [camunda-transaction-boundaries](https://github.com/bpmn-io/camunda-transaction-boundaries).
 
 ### dmn-js
@@ -30,14 +33,17 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 
 ## Plugins in other repositories
 
+> [!WARNING]
+> Community-maintained, no warranties. Review what you install, use at your own risk.
+
 ### General
 
 * [Autosave Plugin](https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin) - A plugin that automatically saves your diagrams.
 * [Internationalization Plugin](https://github.com/FlowSquad/camunda-modeler-i18n-plugin) - A plugin that allows you to translate the UI.
-* [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A plugin that allows to manage multiple diagrams on a single BPMN file.
+* [Multi-Diagram Plugin](https://github.com/sharedchains/camunda-modeler-plugin-multidiagram) - A plugin that allows managing multiple diagrams on a single BPMN file.
 * [Script Box Height Plugin](https://github.com/shepda/camunda-modeler-script-box-height-plugin) - A plugin that increases the height of the script box.
-* [Dracula Theme Plugin](https://github.com/hlucasfranca/camunda-modeler-plugin-dracula) - A plugin which enables a dark theme inspired by [dracula’s](https://draculatheme.com) color theme
-* [Navigator Plugin](https://github.com/momennemrat/camunda-navigator) - A plugin to navigate complex BPMN/DMN projects with ease using keyboard shortcut and global search.
+* [Dracula Theme Plugin](https://github.com/hlucasfranca/camunda-modeler-plugin-dracula) - A plugin which enables a dark theme inspired by [dracula's](https://draculatheme.com) color theme
+* [Navigator Plugin](https://github.com/momennemrat/camunda-navigator) - A plugin to navigate complex BPMN/DMN projects with ease using keyboard shortcuts and global search.
 
 ### bpmn-js
 
@@ -46,12 +52,12 @@ Checkout our [contribution guidelines](#contribute) to add more plugins to the l
 * [Generated Form Preview](https://github.com/camunda-community-hub/camunda-modeler-plugin-usertask-generatedform-preview) - A plugin that allows you to preview forms.
 * [Process I/O Specification](https://github.com/camunda/camunda-modeler-process-io-specification-plugin) - A plugin that allows you to document your process input and output specifications.
 * [Reduced Palette](https://github.com/camunda-community-hub/camunda-modeler-plugin-reduced-palette) - A plugin that reduces the number of available entries in the palette and the context menu.
+* [Token Simulation Plugin](https://github.com/camunda/camunda-modeler-token-simulation-plugin) - A plugin based off [bpmn-js-token-simulation](https://github.com/bpmn-io/bpmn-js-token-simulation).
 * [Technical ID Generator](https://github.com/camunda-community-hub/camunda-modeler-plugin-rename-technical-ids) - A plugin that generates technical IDs for BPMN elements according to best practices.
-* [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - Adds tooltips to various BPMN elements revealing hidden properties and conditional flows.
+* [Tooltip Plugin](https://github.com/viadee/camunda-modeler-tooltip-plugin) - Adds tooltips to various BPMN elements, revealing hidden properties and conditional flows.
 * [Data Outline Plugin](https://github.com/camunda/camunda-modeler-data-outline-plugin) - Adds a tree-view for variables in Camunda 8 to the bottom panel.
-* [Property Info Plugin](https://github.com/mesoneer-ag/camunda-modeler-property-info-plugin) - Shows different properties of BPMN elements as overlay.
-* [Enhanced Color Picker](https://github.com/kommitters/camunda-modeler-plugin-enhanced-color-picker) - A plugin for the Camunda Modeler that adds a flexible color picker to the toolbar, allowing you to easily apply preset colors to your BPMN elements.
-
+* [Property Info Plugin](https://github.com/mesoneer-ag/camunda-modeler-property-info-plugin) - Shows different properties of BPMN elements as an overlay.
+* [Enhanced Color Picker](https://github.com/kommitters/camunda-modeler-plugin-enhanced-color-picker) - A plugin for the Camunda Modeler that adds a flexible color picker to the toolbar, allowing you to apply preset colors to your BPMN elements easily.
 
 ### dmn-js
 
@@ -70,7 +76,7 @@ Would you like to contribute to this list? [Propose your addition](https://githu
 Add your plugin to the [`plugins.json`](./plugins.json) to make it accessible in a structured manner.
 
 ```json
- {
+{
   "id": "my-plugin",
   "displayName": "Example Plugin",
   "version": "0.1.0",
@@ -89,3 +95,4 @@ Add your plugin to the [`plugins.json`](./plugins.json) to make it accessible in
 ## License
 
 MIT _(unless noted otherwise)_
+
