@@ -34,7 +34,7 @@ You can find the plugins below in an accessible, structured format in the [`plug
 ## Plugins in other repositories
 
 > [!WARNING]
-> Community-maintained, no warranties. Review what you install, use at your own risk.
+> These plugins are community-maintained and come with no warranties. Review what you install and use it at your own risk.
 
 ### General
 
