@@ -2,9 +2,9 @@
 
 [![CI](https://github.com/camunda/camunda-modeler-plugins/actions/workflows/CI.yml/badge.svg)](https://github.com/camunda/camunda-modeler-plugins/actions/workflows/CI.yml)
 
-A list of community-maintained plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler). 
+A list of community-maintained plugins for the [Camunda Modeler](https://github.com/camunda/camunda-modeler).
 
-You can find the plugins below in an accessible, structured format in the [`plugins.json`](./plugins.json) file. 
+You can find the plugins below in an accessible, structured format in the [`plugins.json`](./plugins.json) file.
 
 > [!NOTE]
 > Looking for a starting point to create your own plugin? Check out our [plugin starter project](https://github.com/camunda/camunda-modeler-plugin-example) or consult the [plugins documentation](https://docs.camunda.io/docs/components/modeler/desktop-modeler/plugins/).
