@@ -217,6 +217,14 @@
       "description": "A plugin for the Camunda Modeler that adds a flexible color picker to the toolbar, allowing you to easily apply preset colors to your BPMN elements.",
       "url": "https://github.com/kommitters/camunda-modeler-plugin-enhanced-color-picker",
       "category": "BPMN"
+    },
+    {
+      "id": "camunda-modeler-diffing",
+      "displayName": "BPMN Diff Plugin",
+      "version": "1.0.0",
+      "description": "A plugin that lets you compare two BPMN 2.0 diagrams side-by-side inside the Camunda Modeler.",
+      "url": "https://github.com/renis1235/camunda-modeler-diffing",
+      "category": "BPMN"
     }
   ]
 }

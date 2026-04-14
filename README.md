@@ -58,6 +58,7 @@ You can find the plugins below in an accessible, structured format in the [`plug
 * [Data Outline Plugin](https://github.com/camunda/camunda-modeler-data-outline-plugin) - Adds a tree-view for variables in Camunda 8 to the bottom panel.
 * [Property Info Plugin](https://github.com/mesoneer-ag/camunda-modeler-property-info-plugin) - Shows different properties of BPMN elements as an overlay.
 * [Enhanced Color Picker](https://github.com/kommitters/camunda-modeler-plugin-enhanced-color-picker) - A plugin for the Camunda Modeler that adds a flexible color picker to the toolbar, allowing you to apply preset colors to your BPMN elements easily.
+* [BPMN Diff Plugin](https://github.com/renis1235/camunda-modeler-diffing) - A plugin that lets you compare two BPMN 2.0 diagrams side-by-side inside the Camunda Modeler.
 
 ### dmn-js
 
